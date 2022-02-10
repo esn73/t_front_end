@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+#wrap {}
+.inner { width: 1140px; margin: 0 auto; position: relative;}
+
+header {height: 100px; background-color: #1a1f71; 
+        border-bottom: 4px solid #f7b600;
+}
+
+#visual {  }
+#content { }
+#hotdeal {}
+#store {}               
+#card {}
+
+footer {  }

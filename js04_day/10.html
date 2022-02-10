@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>오늘의 추천곡</title>
+</head>
+<body>
+    <input type="text" id="song"><button id="add" onclick="addList()">등록</button>
+    <ul id="songList"></ul>
+    <hr>
+    <button onclick="todaySong()">오늘의 곡 추천</button>
+    <p id="today"></p>
+    <script>
+
+
+    var songList=[]; //빈배열 선언
+
+        function addList(){
+            //등록코드
+            var song=document.getElementById("song").value;
+            console.log(song);
+
+
+            songList.push(song);
+            console.log(songList);
+
+            //화면 출력코드
+            //5) ['트와이스-TT', '아이유-flu', 'f(x)-Airplane', '마룬5-Beautifull mistake', '2NE1-내가 제일 잘나가']
+            var list="";
+            for(var i=0; i<songList.length;i++){
+                list +="<li>" + songList[i]  +"</li>";
+            }
+            document.getElementById("songList").innerHTML=list;
+
+        }
+
+        function todaySong(){
+            var rdm=Math.floor(Math.random()*songList.length+1);//0~배열길이
+            console.log(rdm);
+
+            document.getElementById("today").innerHTML
+            =`오늘의 추천 곡은 "${songList[rdm]}" 입니다.`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>전역 컴포넌트</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+    
+</head>
+<body>
+    <div id="app">
+        <h1>첫번째 인스턴스</h1>
+        <button>등록!</button>
+        <my-global></my-global> <!--<div>전역 컴포넌트 등록됨</div>-->
+        <my-local></my-local>   <!--<div>전역 컴포넌트 등록됨</div>-->
+        <my-com></my-com>
+        <my-com2></my-com2>      
+    </div>
+    <div id="app2"></div>
+        <h1>두번째 인스턴스</h1>
+        <my-glob></my-glob>
+        <my-local></my-local>
+    <script>
+
+        Vue.component('my-com',{
+            templeate:"<div> 전역 컴포넌트가 등록됌.</div>"
+        });
+
+        let cmp={
+            templeate:"<div> 전역 컴포넌트가 등록됌.</div>"
+        }
+        new Vue({
+            el: "#app",
+            components:{
+                "my-local":cmp
+            }
+
+        });
+
+        new Vue({
+            el: "#app2"
+        })
+    </script>
+    
+</body>
+</html>

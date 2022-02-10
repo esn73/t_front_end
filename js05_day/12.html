@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var count=0;
+        var count2=0;
+
+        myFun(); //1. 안녕하세요 함수 호이스팅
+
+        //이름이 있는 함수
+        function myFun(){
+            count++; //count+=count+1
+            document.write(count + ". 안녕하세요", "<br>");
+        }
+
+        myFun();
+        myFun();
+        myFun();
+
+        theFun(); //theFun is not a function 익명함수는 호이스팅 안됌
+
+        //이름이 없는 함수 - 익명함수
+        var theFun=function(){
+            count2++;
+            document.write(count2 + ".안녕하세요","<br>")
+        }
+
+        theFun();
+    </script>
+</body>
+</html>

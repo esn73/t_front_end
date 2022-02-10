@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리 팝업</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        #popup {position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+                background-color: rgba(0, 0, 0, 0.7); display: none;}
+        .modal{background-color: #fff; width: 400px; height: 200px;
+                padding: 50px 20px; margin: 100px auto;
+                text-align: center;}
+        .modal h1{}
+        .modal p{}
+        .modal button{padding: 10px 20px;}
+        ul{padding: 0; list-style: none; text-align: center;}
+        .gnb::after{content: ""; display: block; }
+        .gnb>li{ float: left; padding: 10px 20px; background-color: yellow;
+                position: relative;}
+        .gnb>li>a{text-decoration: none; color: #000;}
+        .submenu{background-color: skyblue; padding: 10px 0;
+            position: absolute; width: 100%; left: 0; top:40px;
+            display: none;}
+
+
+    </style>
+</head>
+<body>
+    <!--#popup>.modal>h1+p+button[class=close]-->
+   <div id="popup">
+       <div class="modal">
+           <h1>팝업제목</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+           <button class="close">닫기 x</button>
+       </div>
+    </div>
+    <div id="wrap">
+        <h1>팝업열기</h1>
+        <nav>
+            <ul class="gnb">
+                <li><a href="#">대메뉴01</a>
+                    <ul class="submenu">
+                        <li>sub1-1</li>
+                        <li>sub1-2</li>
+                        <li>sub1-3</li>
+                    </ul>
+                </li>
+                <li><a href="#">대메뉴02</a>
+                    <ul class="submenu">
+                        <li>sub2-1</li>
+                        <li>sub2-2</li>
+                        <li>sub2-3</li>
+                    </ul>
+                </li></li>
+                <li><a href="#">대메뉴03</a>
+                    <ul class="submenu">
+                        <li>sub3-1</li>
+                        <li>sub3-2</li>
+                        <li>sub3-3</li>
+                    </ul>
+                </li></li>
+                <li><a href="#">대메뉴04</a>
+                    <ul class="submenu">
+                        <li>sub4-1</li>
+                        <li>sub4-2</li>
+                        <li>sub4-3</li>
+                    </ul>
+                </li></li>
+                <li><a href="#">대메뉴05</a>
+                    <ul class="submenu">
+                        <li>sub5-1</li>
+                        <li>sub5-2</li>
+                        <li>sub5-3</li>
+                    </ul>
+                </li></li>
+            </ul>
+        </nav>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque facere voluptas officiis, aliquid perferendis debitis beatae vel dolores aperiam necessitatibus itaque, praesentium voluptatum saepe ullam minima fuga, nemo ducimus excepturi.</p>
+    </div>
+    <script>
+        // $(".gnb>li").click(function(){
+            // $(".submenu").show(); //li 모두 노출
+
+
+        $(".gnb>li").mouseenter(function(){
+            $(this).children(".submenu").slideDown()
+        });
+
+        $(".gnb>li").mouseleave(function(){
+            $(this).children(".submenu").slideUp()
+        });
+        $("#wrap h1").click(function(){
+            // $("#popup").css("display","block");
+            // $("#popup").show()
+            $("#popup").fadeIn(1000)
+        });
+        $(".close").click(function(){
+            // $("#popup").css("display","none");
+            // $("#popup").hide()
+            $("#popup").fadeOut(1000)
+        });
+    </script>
+</body>
+</html>

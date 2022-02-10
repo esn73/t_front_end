@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>단항연산 ++, --</title>
+</head>
+<body>
+    <script>
+        var x=2;
+            x=--x; //전치연산
+            console.log(x);
+        var y=3;
+            y=y++;//후치연산
+            console.log(y);
+        var z=y++;
+        console.log(z); //x=1,y=3++,z=3++
+    </script>
+</body>
+</html>

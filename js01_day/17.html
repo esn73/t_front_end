@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 출력</title>
+</head>
+<body>
+    <p id="test"></p>
+    <button onclick="txt()">확인</button>
+    <script>
+        var x="it's";
+            x='it\'s';
+    var k="아주 ";
+    var y="오늘은 날씨가"+k+"좋습니다.";
+
+    var price=1000;
+    var num=5;
+    //var test="붕어빵은" + price + "원에" + num + "개 입니다.";
+    var test=`붕어빵은 ${price}원에 ${num}개 입니다.` ; //${변수명}
+
+
+    function txt(){
+        console.log("함수호출됌!")
+        document.getElementById("test").innerHTML=test;
+    }
+
+    </script>
+</body>
+</html>

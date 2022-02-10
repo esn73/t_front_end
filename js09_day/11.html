@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #popup{ position: fixed; left: 0; top: 0; right: 0; bottom: 0;
+                background-color: rgba(0, 0, 0, 0.7); display: none;}
+        .modal{background-color: #fff; padding: 50px;
+                width: 300px; height: 200px; text-align: center;
+                margin: 0 auto;}
+        .close{ border: none; padding: 10px 20px; margin-top: 100px;
+            background-color: indianred; color: #fff;}
+    </style>
+</head>
+<body>
+    <div id="popup">
+        <div class="modal">
+            <h2>팝업 제목</h2>
+            <button class="close">닫기 X </button>
+        </div>
+    </div>
+
+    <h1>제목입니다.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad expedita nostrum quibusdam iste eum fugiat explicabo sequi tempora molestias et molestiae perferendis est, dolore, necessitatibus eaque laboriosam tempore optio.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad expedita nostrum quibusdam iste eum fugiat explicabo sequi tempora molestias et molestiae perferendis est, dolore, necessitatibus eaque laboriosam tempore optio.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad expedita nostrum quibusdam iste eum fugiat explicabo sequi tempora molestias et molestiae perferendis est, dolore, necessitatibus eaque laboriosam tempore optio.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad expedita nostrum quibusdam iste eum fugiat explicabo sequi tempora molestias et molestiae perferendis est, dolore, necessitatibus eaque laboriosam tempore optio.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad expedita nostrum quibusdam iste eum fugiat explicabo sequi tempora molestias et molestiae perferendis est, dolore, necessitatibus eaque laboriosam tempore optio.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad expedita nostrum quibusdam iste eum fugiat explicabo sequi tempora molestias et molestiae perferendis est, dolore, necessitatibus eaque laboriosam tempore optio.</p>
+    <script>
+        var popup=document.getElementById("popup");
+        var modal=document.querySelector(".modal");
+        var close=document.querySelector(".close");
+        var body=document.querySelector("body")
+
+        popup.style.display="block";
+        close.onclick=function(){
+            popup.style.display="none";
+        }
+
+        close.onclick=function(){
+            popup.style.display="none";
+        }
+
+        body.onclick=function(){
+            alert("바디 이벤트 발생")
+        }
+        modal.onclick=function(event){
+            event.stopPropagation();//이벤트가 상위 전파되는 버블링 현상 막기
+        }
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>갤러리</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #gallery{width: 350px; overflow: hidden;
+        margin: 100px auto; border: 3px solid #ccc;
+        text-align: center;    }
+        #gallery img{width: 100%; display: block;
+        box-sizing:border-box}
+        #gallery button{ padding: 10px 20px; margin-top: 30px;
+        background-color: brown; color: #ccc; border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="gallery">
+        <p><img src="images/n1.jpg" alt="" id="photo"></p>
+        <p>
+            <button onclick="gallery('prev')">이전</button>
+            <button onclick="gallery('next')">다음</button>
+        </p>
+    </div>
+    <script>
+        
+        var num=1; //n1.jpg, n2.jpg ...n5.jpg
+        var img=document.getElementById("photo");
+
+        function gallery(btn){
+            if(btn=="next"){
+                if(num>5)return;
+                //다음 버튼 클릭 ture
+                num++; console.log(num);
+
+            }else{
+                //이전 버튼을 클릭->false
+                if(num<=1)return;
+                num--; console.log(num);
+
+            }
+            img.setAttribute("src", "images/n" + num + ".jpg")
+        }
+    </script>
+</body>
+</html>

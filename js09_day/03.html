@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탭메뉴 3</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        h1{text-align: center;}
+        #tabs{width: 500px; margin: 50px auto;}
+
+        #menu{list-style: none; height: 80px;}
+        #menu li{width: 130px; float: left;}
+        #menu li a{display: block; padding: 10px 0 0 0; text-align: center;
+                    text-decoration: none; color: #fff;
+                    background-color: #aaa; height: 30px;
+                    line-height: 30px; font-size: 18px; margin-top: 40px;
+                    border-right: 1px solid #ddd;}
+        #menu li a:hover{padding: 10px 0 5px 0; margin-top: 35px;}
+        #menu li a.active{ background-color: #555; color: greenyellow; 
+                            padding: 10px 0 10px 0 ; margin-top: 30px;}
+                    
+
+        #contents{height: 200px; color: #fff; background-color: #555;
+                line-height: 3; font-size: 18px; padding: 10px 20px;}
+        #contents .tab_con{display: none;}
+        #contents .tab_con.active {display: block;}  
+        #contents .tab_con h3{ margin-top: 20px;}
+
+        #tabs menu p{line-height: 2; color: greenyellow; padding-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <h1>탭메뉴</h1>
+    <div id="tabs">
+        <ul id="menu">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">갤러리</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+        <div id="contents">
+            <div id="notice" class="tab_con"><!--class"tab_con active"-->
+                <h3>공지사항</h3>
+                <p>공지사항 내용 본문 컨텐츠입니다...0000</p>
+            </div>
+            <div id="gallery" class="tab_con">
+                <h3>갤러리</h3>
+                <p>갤러리 내용 본문 컨텐츠입니다...1111</p>
+            </div>
+            <div id="center" class="tab_con">
+                <h3>고객센터</h3>
+                <p>고객센터 내용 본문 컨텐츠입니다...2222</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var menu=document.querySelectorAll("#menu>li>a"); //메뉴 a태그 배열 3개
+        var tab_con=document.querySelectorAll(".tab_con"); //컨텐츠 박스 배열 3개
+
+            for(let i=0; i<menu.length; i++){
+            menu[i].onclick=function(e){
+
+                e.preventDefault();//a태그 기본 이벤트 막기
+                console.log(e);
+
+                for(let i=0; i<menu.length; i++){
+                    menu[i].classList.remove("active");
+                    tab_con[i].classList.remove("active");
+                }
+
+
+                menu[i].classList.add("active");
+                tab_con[i].classList.add("active");
+            }
+        }
+
+        menu[0].click()
+
+    </script>   
+</body>
+</html>

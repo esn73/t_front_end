@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>애니메이션 겔러리</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "굴림", sans-serif;
+            font-size: 12px;
+        }
+        #wrap {
+            width: 200px;
+            margin: 20px auto;
+        }
+        #wrap .page {
+            text-align: right;
+            margin-bottom: 5px;
+        }
+        #wrap .page .page_n {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        #wrap .page button {
+            border: none;
+            background: #666;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            line-height: 1.5;
+            overflow: hidden;
+        }
+        #wrap .imgbox {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #505900;
+            overflow: hidden; 
+            position: relative; 
+        }  
+        #wrap .imgbox img { width: 100%; }
+
+        .imgbox button { position: absolute; top: 50%;
+                         transform: translateY(-50%);
+                         border: none; padding: 5px;
+                         background-color: #505900; color: #fff; }
+        .imgbox .prevBtn { left: 0; }
+        .imgbox .nextBtn { right: 0; }
+
+        .slider { padding: 0; list-style: none; height: 200px; }
+        .slider li { float: left; width: 200px; height: 200px; }
+
+        .dot { padding: 0; list-style: none; width: 100px; margin: 10px auto; }
+        .dot li { width: 10px; height: 10px; background-color: #ccc;
+                  float: left; margin: 5px; font-size: 0px; border-radius: 50%; }
+        .dot li.on { background-color: crimson; }          
+    </style>
+    <script>
+     $(function(){
+        let totalNum = $(".imgbox img").length;  // 5
+        let imgWidth = $(".slider li").width();  // 200px
+        let imgTotalWidth = imgWidth * totalNum;
+
+         // 초기세팅
+         init(); 
+
+         // 자동 넘어가는 슬라이더
+         let roll = setInterval(next, 2000);
+
+         $(".nextBtn").click(function(){
+             clearInterval(roll);
+             next();
+         });
+
+         $(".prevBtn").click(function(){
+             clearInterval(roll);
+             prev();
+         });
+
+         $(".imgbox>button").mouseleave(function(){
+            let roll = setInterval(next, 2000);
+         });
+
+         // 능력단위 함수들 정리
+         function init() {
+            $(".page span:first").text(1);
+            $(".page span:last").text(totalNum); 
+            $(".slider").width( imgTotalWidth );
+         }
+
+         function next() {
+            $(".slider").stop().animate({marginLeft: -imgWidth}, 500, "swing", function(){
+                   $(".slider>li:first").appendTo(".slider");
+                   $(".slider").css({marginLeft: 0});
+                   let num = $(".slider>li:first").children("img").attr("alt");
+                   $(".page span:first").text(num);
+                   $(".dot li").eq(num-1).addClass("on").siblings("li").removeClass("on");
+             });
+         }
+         function prev() {
+             $(".slider").css({marginLeft: -imgWidth}); 
+             $(".slider>li:last").prependTo(".slider");
+
+             $(".slider").animate({marginLeft: 0}, 500, "swing", function(){
+                let num = $(".slider>li:first").children("img").attr("alt");
+                $(".page span:first").text(num);
+                $(".dot li").eq(num-1).addClass("on").siblings("li").removeClass("on");
+             });
+         }
+     });
+    </script>
+</head>
+<body>
+   <div id="wrap">
+       <div class="page">
+           <span> <!-- 현재이미지번호 --> </span> / 
+           <span> <!-- 총이미지 갯수 --> </span>
+       </div>
+       
+       <div class="imgbox">
+           <button class="prevBtn"> &lt; </button>
+           <button class="nextBtn"> &gt; </button>
+           <ul class="slider">
+              <li><img src="images/marke1.jpg" alt="1"></li>
+              <li><img src="images/marke2.jpg" alt="2"></li>
+              <li><img src="images/marke3.jpg" alt="3"></li>
+              <li><img src="images/marke4.jpg" alt="4"></li>
+              <li><img src="images/marke5.jpg" alt="5"></li>  
+           </ul> 
+       </div> 
+       
+       <ul class="dot">
+          <li class="on">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+       </ul>        
+   </div> 
+</body>
+</html>
+​

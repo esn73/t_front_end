@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>tab 메뉴</title>
+    <style>
+     * { margin: 0; padding: 0; box-sizing: border-box; }   
+      #btnbox { border: 1px solid #ccc; background-color: #eee; 
+                overflow: hidden;
+                width: 750px; margin: 50px auto 0; }
+      #btnbox .tab_btn { background-color: #eee; float: left;
+                         border: none; outline: 0; cursor: pointer; 
+                         font-size: 20px; padding: 15px 20px; width: 240px;  }  
+      #btnbox .tab_btn.on, #btnbox .tab_btn:hover { background-color: #ccc; } 
+      #content { width: 750px; margin: 0 auto; border: 1px solid #ccc; 
+                 border-top: none;}
+      #content .tab_box { padding: 20px; display: none;  }
+      #content .tab_box h3 { font-size: 24px; margin-bottom: 10px; }
+      #content .tab_box p { color: #333; font-size: 14px; list-style: 2; }
+    </style>
+</head>
+<body>
+   <div id="btnbox">
+     <button class="tab_btn" onclick="tabOpen(event, 'box1')">메뉴01</button>  
+     <button class="tab_btn" onclick="tabOpen(event, 'box2')">메뉴02</button>  
+     <button class="tab_btn" onclick="tabOpen(event, 'box3')">메뉴03</button>  
+   </div> 
+   <div id="content">
+    <div class="tab_box" id="box1">
+        <h3>menu 01 contents</h3>  
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio culpa quasi nesciunt sequi modi in blanditiis eveniet quibusdam. Neque consectetur voluptatem deserunt omnis iure ducimus soluta mollitia, cupiditate rem nulla.</p>
+    </div>
+    <div class="tab_box" id="box2">
+        <h3>menu 02 contents</h3>  
+        <p>동해물과 백두산이 마르고.... 동해물과 백두산이 마르고.... 동해물과 백두산이 마르고.... 동해물과 백두산이 마르고.... 동해물과 백두산이 마르고....</p>
+    </div>
+    <div class="tab_box" id="box3">
+        <h3>menu 03 contents</h3>  
+        <p>12345678901234567890123456789012345678901234567890123456789
+           01234567890123456789012345678901234567890123456789012345678
+           90123456789012345678901234567890</p>
+    </div>
+  </div>
+  <script>
+      let i, tabBox, tabBtn;
+      tabBox=document.querySelectorAll(".tab_box");
+      tabBtn=document.querySelectorAll(".tab_btn")
+
+      function tabOpen(event, id){
+
+            //초기화 코드
+            for (i=0; i<tabBtn.length; i++){
+                tabBtn[i].className=tabBtn[i].className.replace("on","");
+                tabBox[i].style.display="none";
+
+            }
+            event.currentTraget.className +=" on";
+            document.getElementById(id).style.display="block";
+      }
+
+      tabBtn[0].click();
+  </script>
+</body>
+</html>

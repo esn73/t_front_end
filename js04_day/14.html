@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이메일 유효성 체크</title>
+</head>
+<body>
+    <script>
+        var userEmail=prompt("이메일 주소를 입력해주세요", "test@test.com")
+
+        var arrUrl=[".com",".co.kr",".net",".go.kr","or.kr"];
+
+        var check1=false;
+        var check2=false;
+
+        //해당 문자열이 존재하면 시작문자열 인덱스번호 반환없으면 -1
+        if(userEmail.indexOf("@")>0){ //4
+            check1=true;
+        }
+        for(var i=0; i<arrUrl.length;i++){
+            if(userEmail.indexOf(arrUrl[i])>0){//일치하는 문자 없으면 -1
+                check2=true;
+            }
+        }
+        if(check1&&check2){
+            document.write(userEmail+`이메일 주소 형식이 맞습니다.`);
+        }else{
+            document.write(userEmail+`이메일 주소 형식이 잘못되었습니다.`);
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+    #wrap{padding: 30px 100px; text-align: center; width: 200px;
+        margin: 50px auto; height: 300px; border: 5px solid skyblue;}
+    #title{font-size: 42px; }
+    .fa{font-size: 62px; color: skyblue;} 
+    #like{ font-size: 32px; color: crimson; margin-top: 30px;}
+    .off{display: none;}
+
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <h1 id="title">추천</h1>
+        <i class="fa fa-thumbs-up"></i>
+        <p id="like">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+        </p>
+    </div>
+</body>
+    <script>
+        let wrap=document.getElementById("wrap");
+        let title=document.getElementById("title");
+        let icon=document.querySelector(".fa")
+        let like=document.getElementById("like")
+        let flag=true
+
+        wrap.onclick=function(){
+            if( like.classList.contains("fa-thumbs-up")){
+            title.innerHTML="비추천"
+            icon.classList.remove("fa-thumbs-up")
+            icon.classList.add("fa-thumbs-down")
+            like.classList.add("off");
+            } else{
+            title.innerHTML="추천"
+            icon.classList.remove("fa-thumbs-down")
+            icon.classList.add("fa-thumbs-up")
+            like.classList.remove("off")
+
+            }
+        }
+
+    </script>
+</html>

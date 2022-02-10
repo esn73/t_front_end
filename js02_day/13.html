@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>62p 건강습관 체크 10,000보 이상인지 체크</title>
+</head>
+<body>
+    <!--prompt 걷는 양을 입력 받기
+    10000보 이상인지 체크 
+    당신은 건강한 습관을 가지고 있습니다.
+    당신은 운동량이 부족합니다.-->
+
+    <script>
+
+        var walk=prompt("하루에 걷는 양을 입력해주세요","0");
+        if(walk>=10000){//만보이상 일때 true
+            document.write(walk + "보 걸었으니 당신은 건강한 습관을 가지고 있습니다.");
+        }else{
+            document.write(10000-walk + "보 부족하니 당신은 운동량이 부족합니다.");
+        }
+
+
+    </script>
+
+
+</body>
+</html>

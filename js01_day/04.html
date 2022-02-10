@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>변수</title>
+</head>
+<body>
+    <script>
+        var x = "10"; //"문자열"
+        var y = 400;
+        var z = x + y;
+
+
+        var a = "오늘은 ";
+        var b = "날씨가 ";
+        var c = "화창합니다.";
+        var d = a+b+c;
+
+    console.log(z, typeof z); // 10400 문자+숫자=>연결되서 출력. 
+    console.log(d, typeof d); // typeof는 숫자인지 string인지 확인
+    console.log(y, typeof y);
+
+    var a1 = "오늘은 ";
+        a1 += "날씨가"; // 오늘은 날씨가로 출력됌
+        // a1=a1+a1
+    
+    var x1=10;
+        x1+=30; // x1=x1+x1 x1+=30은 40출력
+    
+ 
+
+
+    console.log(a1); // 재할당하면 기존 데이터는 X
+    console.log(x1);
+    </script>
+</body>
+</html>

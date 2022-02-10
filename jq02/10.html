@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>마우스 이벤트</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        .subject{width: 500px; height: 500px; background-color: pink;
+                border: 10px solid crimson; border-radius: 50%;
+                text-align: center; line-height: 500px; color: #fff ;
+                font-size: 32px; position: absolute; left: 50%;
+                top: 50%; transform: translate(-50%, -50%);}
+        .tip{ width: 200px; height: 30px; border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.7); color: crimson;
+            font-weight: bold; text-align: center; opacity: 0;
+            transition: opacity .5 ease;
+            position: absolute; line-height: 30px; border: 2px solid crimson;}
+        .tip.on{opacity: 1;}
+    </style>
+    <script>
+        $(function(){
+            $(".subject").mousemove(function(event){
+                console.log(event)  
+                let x=event.clientX
+                let y=event.clientY;
+                console.log("x: "+x, "y: "+y)
+                let x2=event.pageX;
+                let y2=event.pageY;
+                console.log("pageX: "+x2, "pageY: "+y2)
+                let x3=event.offsetX;
+                let y3=event.offsetY;
+                console.log("offsetX: "+x3, "offsetY: "+y3)
+
+                $(".tip").css({
+                    left:x -20,
+                    top:y-50
+                }).addClass("on"); 
+                $(".subject").mouseleave(function(){
+                    $(".tip").removeClass("on");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="subject">
+        학습과목 보기
+    </div>
+    <div class="tip">HTML, CSS, jQuery</div>
+</body>
+</html>

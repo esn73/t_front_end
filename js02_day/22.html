@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>강의실 안내</title>
+</head>
+<body>
+    <script>
+        var room=prompt("수강하신 과목을 입력해주세요","웹프론트개발");
+
+        switch(room){
+            case "웹디자인":document.write(room+"반은 101호입니다.");
+            break;
+            case "웹프론트개발":document.write(room+"반은 201호입니다");
+            break;
+            case  "웹백엔드개발":document.write(room+"반은 301호입니다.")
+            break;
+            default:alert("수강하신 과목은 개설이 되지 않았습니다.");
+        }
+    </script>
+</body>
+</html>

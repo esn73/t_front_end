@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .imgbox{width: 350px; margin: 100px auto 20px; 
+                border: 2px solid skyblue;}
+        .imgbox > img {width: 100%; display: block;}
+        .copy{text-align: center;}
+        .copy span{color: red; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <!--이미지 클릭할때마다 다음이미지로넘기기-->
+    <div class="imgbox">
+        <img src="images/n1.jpg" alt="1">
+    </div>
+    <p class="copy"><span>1</span>번째 이미지</p>
+
+    <script>
+        let imgTag=document.querySelector(".imgbox img")
+        let numText=document.querySelector(".copy span")
+        let num=1;
+
+        imgTag.onclick=function(){
+            num++;
+            if(num>5){num=1; }
+            console.log(num); //2, 3, 4, 5, 1
+            imgTag.setAttribute("src", "images/n" + num + ".jpg");
+            numText.innerHTML=num;
+        }
+    </script>
+</body>
+</html>

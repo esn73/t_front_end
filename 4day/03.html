@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap *{border: 1px solid red; padding: 0px; margin-bottom: 10px;}
+        #wrap{width: 600px; margin: 0 auto;}
+
+        #content{background-color: yellow;}
+        /* #content::before{content: "앞부분에 내용추가";} */
+        /* #content::after{content:"뒷부분에 내용추가"} */
+        #content::after{content: ""; display: block; clear: both;}
+        .left{float: left; width: 120px; height: 200px;}
+        .right{float: right; width: 400px; height: 200px;}
+        #footer{background-color: skyblue; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>LOGO</h1>
+        </div>
+        <div id="content">
+            <!--before 내용추가 -->
+            <div id="left">서브메뉴</div>
+            <div id="ritgh">본문단</div>
+            <!--after 내용추가 clear:both -->
+        </div>
+        
+            <div id="footer">
+                <p>copyright </p>
+            </div>
+    </div>
+</body>
+</html>

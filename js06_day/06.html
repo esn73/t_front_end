@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>갤러리</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #gallery{width: 350px;
+               margin: 100px auto; overflow: hidden;
+               border: 3px solid #ccc;
+                 text-align: center;  position: relative;
+                height: 200px;}
+        #gallery .list{list-style: none; width: 1750px;
+                    position: absolute; left: -700px; top: 0;
+                transition: 1s;}
+                /* left 0px, -350px, -700px, -1050px, -1400px */
+        #gallery .list::after{content: ""; display: block; clear: both;}
+        #gallery .list li{float: left; width: 350px;}
+        #gallery img{width: 100%; display: block;}
+    </style>
+</head>
+<body>
+    <div id="gallery">
+        <ul class="list" id="box">
+            <li><img src="images/n1.jpg" alt="1"></li> <!--0*-350=0-->
+            <li><img src="images/n2.jpg" alt="2"></li><!--1*-350=0-->
+            <li><img src="images/n3.jpg" alt="3"></li><!--2*-700=0-->
+            <li><img src="images/n4.jpg" alt="4"></li><!--3*-1050=0-->
+            <li><img src="images/n5.jpg" alt="5"></li><!--4*-1400=0-->
+        </ul>
+    </div>
+    <script>
+        //element.style.property
+        //.list->left 0px, -350px, -700px, -1050px, -1400px
+        var ulTag=document.getElementById("box");
+        var num=0;//인덱스 번호 대신 이용할 값
+        var move;
+
+        setInterval(roll, 2000)
+
+        function roll(){
+            num++;
+            if(num>=5){num=0;}
+            var move=-350*num;
+            ulTag.style.left=move+"px";
+        }
+    </script>
+</body>
+</html>

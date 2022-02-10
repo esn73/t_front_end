@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{ width: 100px; height: 100px; border: 2px solid red;
+            background-color: yellow; font-size: 42px;
+            position: absolute; left: 10px ; } 
+            /* transition: left 1s ease */
+        .play, .stop{margin-top: 120px;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".play").click(function(){
+                // $("#box").css("left", "500px")
+                // .animate({스타일시트 속성}, 적용시간, 가속도(swing, linear), 콜백함수)
+                $("#box").animate({left:"1000px"}, 1000, "swing", function(){
+                alert("애니끝!")
+                });
+            });
+            $(".stop").click(function(){
+                $("#box").stop();
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="box">box</div>
+    <button class="play">play</button>
+    <button class="stop">stop</button>
+</body>
+</html>

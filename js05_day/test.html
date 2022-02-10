@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<bod id="backcolor">
+    <button onclick="chColor">배경색 바꾸기</button>
+    <script>
+        var bgcolor=["white","yellow","aqua","purple"];
+        var i=0;
+        function backcolor(){
+       
+            if(i>=backcolor){
+                i=0;
+            }
+           document.getElementById("backcolor").style.backgroundColor
+           =backcolor[i];
+           i++;
+
+            // document.getElementById("bgColor").style.backgroundColor
+            //     =bgColor[i];
+
+        }
+    </script>
+</body>
+</html>

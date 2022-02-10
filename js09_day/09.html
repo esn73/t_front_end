@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탭메뉴2</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrap{width: 500px; margin: 50px auto;}
+        #tab_title{overflow: hidden; background-color: #eee; 
+                border-top: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+            }
+        .tab_btn{background-color: inherit; float: left; border: 0; outline: 0;
+                    cursor: pointer; font-size: 20px; padding: 14px 30px;} /* **inherit상위부모의 컬러값을 똑같이 가져옴 */
+        .tab_btn:hover{background-color: #eee;}
+        .tab_btn.on{background-color: #fff; border-bottom: #fff;}
+
+        #tab_box{padding: 10px 20px; border: 1px solid #ccc; border-top: none;}
+        .tab_con{display: none;}
+        .tab_con.on{display: block;}
+        .tab_con h3{line-height: 4;}
+        .tab_con p{line-height: 2; color: #555; padding-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    <div id="tab_title">
+        <button class="tab_btn on">첫번째</button>
+        <button class="tab_btn">두번째</button>
+        <button class="tab_btn">세번째</button>
+    </div>
+    <div id="tab_box">
+        <div class="tab_con">
+            <h3>첫번째 탭메뉴</h3>
+            <p>Lorem1 ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="tab_con">
+            <h3>두번째 탭메뉴</h3>
+            <p>Lorem2 ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="tab_con">
+            <h3>세번째 탭메뉴</h3>
+            <p>Lorem3 ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+
+    </div> 
+
+    <script>
+        let tab_btn=document.querySelectorAll(".tab_btn");
+        let tab_con=document.querySelectorAll(".tab_con");
+
+        tab_btn[0].onclick=function(){
+            // this.parentElement.style.border="2px solid red";
+            // this.parentElement.nextElementSibling.style.border="2px solid red";
+            this.parentElement.nextElementSibling.childNodes[0].style.border="2px solid red";
+        }
+    </script>
+</body>
+</html>

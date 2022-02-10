@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flort 띄우다</title>
+        <style>
+            #wrap{width: 500px; padding: 30px; margin: 0 auto; border: 1px solid red;}
+            #header{border: 1px solid blue; padding: 20px; margin-bottom: 10px; height: 200px;
+                height: 100px; overflow: hidden;
+            
+            }
+            
+            #header h1{float: left;}
+            #header ul{float: right; list-style: none;}
+            #header ul li{display: inline-block;}           
+            #content{border: 1px solid blue; padding: 20px;margin-bottom: 10px;
+                    overflow: hidden;
+            }
+
+            #content div{border: 1px solid green; margin: 10px; height: 100px;}
+            #content .left{float: left; width: 30%;}
+            #content .right{float: right; height: 300px; width: 60%;}
+            #footer{border: 1px solid blue; padding: 0 20px;}
+        
+        </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>LOGO</h1>
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="left">서브메뉴</div>
+            <div class="right">본문내용</div>
+
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+</body>
+</html>

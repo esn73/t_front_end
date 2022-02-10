@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=d, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{width: 504px; height: 2000px; margin: 0 auto;       
+            border: 2px solid red;box-sizing: border-box;
+            position: relative; overflow: hidden;
+        }
+        #wrap div{width: 50px; height: 50px;
+                background-color: skyblue;    
+                 position: absolute;
+            }
+        .box1{top: 0; left: 0;}
+        .box2{top: 0; right: 0; z-index: 1;}   /* 기본적으로 z index 0 */
+       
+        .box3{bottom: 0; left: 0;}
+        .box4{bottom: 0; right: 0;}
+        .box5{left: 50%;top: 50%; margin: -25px 0 0 -25px;}
+        #wrap .box6{width: 100px; height: 200px; background-color: red;
+                    top: 0; right: -60px;
+        }
+        #wrap .box7{bottom: 30px; right: 100px;
+            background-color:  salmon;
+                     border-radius: 50%;
+                     position: fixed;         
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!--.box$*5>{box}-->
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">quick</div>
+        <div class="box7">Top</div>
+    </div>
+</body>
+</html>

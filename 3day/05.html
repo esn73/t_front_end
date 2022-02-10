@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스사이징</title>
+    <style>
+        body{font-size: 0;}
+        div{ width: 200px; height: 200px; font-size: 16px;
+        background-color: skyblue; display: inline-block; vertical-align: top;
+        }
+        .box1{/*border-radius: 50%;*/
+                border-top-right-radius: 50%;
+                border-bottom-left-radius: 50%;
+                    }
+        .box2{padding: 50px;}
+        .box3{border: 50px solid  blue;}
+        .box4{padding: 50px; border: 50px solid blueviolet; display: none; /* 자리도 사라짐*/
+           /* visibility: hidden; 자리 영역은두고 없어짐*/
+        }
+        .box5{padding: 50px; border: 50px solid blue;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <!--div.box$*5>{box$}-->
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+    <div class="box5">box5</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>할인가격 계산기</title>
+</head>
+<body>
+    원래 가격<input type="text" id="origin">원<br>
+    할인율<input type="text" id="rate">%<br>
+    <hr>
+    <button onclick="price()">할인 가격 계산하기</button>
+    <p id="result"></p>
+    <script>
+        function price(){
+            var origin=document.getElementById("origin").value;
+            var rate=document.getElementById("rate").value;
+
+            var sale=origin*(rate/100) //할인가격 100원
+            var result=origin-sale;//최종 지불해야 할 가격 
+            console.log(origin, typeof origin, rate, typeof rate, sale, typeof sale);
+
+            document.getElementById("result").innerHTML
+            =`원래가격은 ${origin}원 인데 할인율이 ${rate}이므로
+            ${sale}원 절약해서 최종 ${result}원에 구매 가능합니다. `;
+        }
+    </script>
+</body>
+</html>

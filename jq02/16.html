@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 편집 메서드</title>
+    <style>
+        #m1{background-color: skyblue; padding: 10px;}
+        #m2{background-color: orange; padding: 10px;}
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#m1").prepend("<p> 기존 요소 앞prepend 추가 1-1 </p>")
+            $("#m1").append("<p> 기존 요소 위 append 추가 1-2 </p>")
+            $("#m1").before("<p> 선택박스 바깥쪽 before에 2-1 </p>")
+            $("#m1").after("<p> 선택박스 바깥쪽 before에 2-3 </p>")
+
+            $("<p> 기존 요소 앞prepend 추가 1-1 </p>").prependTo("#m2");
+            $("<p> 기존 요소 append 추가 1-2 </p>").appendTo("#m2")
+            $("<p> 선택박스 바깥쪽 앞에 before 추가 2-1 </p>").insertBefore("#m2")
+            $("<p> 선택박스 바깥쪽 뒤에 before 추가 2-2 </p>").insertBefore("#m2")
+        })
+    </script>
+</head>
+<body>
+    <div id="m1">
+            <!-- 기준점 앞에 추가 -->
+        <strong>내용1</strong>
+            <!-- 기준점 앞에 추가 -->
+    </div>
+    <div id="m2">
+        <strong>내용2</strong>   
+    </div>
+</body>
+</html>

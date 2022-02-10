@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수강신청</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <fieldset>
+            <legend>수강 신청인</legend>
+            <ul>
+                <li>
+                    <label for="">학번</label>
+                    <input type="text" id="number" placeholder="학번을 입력해주세요" autofocus
+                    value="12345" readonly>
+                </li>
+                <li>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" autofocus minlength="2" maxlength="5" required size="3">
+                </li>
+                <li>
+                    <label for="">이메일주소</label>
+                    <input type="text" id="email"> @
+                    <select name="email" id="">
+                        <option value="naver">naver.com</option>
+                        <option value="google">google.co.kr</option>
+                        <option value="daum">daum.net</option>
+
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>수강과목</legend>
+            <ul>
+                <li>
+                    <label for="">수강과목</label>
+                    <select name="" id="">
+                        <option value="">수학</option>
+                        <option value="">영어</option>
+                        <option value="">과학</option>
+                    </select>
+                </li>
+                <li>
+                    <p>신청과목을 선택하세요(1개만)</p>
+                    <label><input type="radio" name="subject" checked>영어</label>
+                    <label><input type="radio">수학</label>
+                    <label><input type="radio">과학</label>
+
+                </li>
+                <li>
+                    <p>취미를 선택해주세요</p>
+                    <label><input type="checkbox" checked>영화</label>
+                    <label><input type="checkbox">음악</label>
+                    <label><input type="checkbox">독서</label>
+                </li>
+            </ul>
+        </fieldset>
+        <input type="submit" value="제출하기">
+        <input type="rest" value="다시 작성">
+    </form>
+    <hr>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.283226887545!2d126.89599464056217!3d37.524820319493664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9eee8bd6f237%3A0xe01d0981c8850e07!2z7JiB65Ox7Y-s6rWs7LKt7Jet!5e0!3m2!1sko!2skr!4v1631589424603!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" frameborder="0"></iframe>
+</body>
+</html>

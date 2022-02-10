@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>랜덤 배경 칼라 출력</title>
+</head>
+<body id="bg">
+    <button class="btn" >배경칼라 변경</button>
+    <script>
+        function chBg(){
+            var arrBg=["#ff0", "#6c0", "#fcf", "#cf0","#39f"]; //배열명[인덱스번호]
+            var bodyTag=document.getElementById("bg")
+            var rdm=Math.floor(Math.random()*4);
+            console.log(rdm);
+            bodyTag.style.backgroundColor = arrBg[rdm];
+
+        }
+        var btn=document.getElementsByClassName("btn")[0];
+        btn.onclick=chBg;
+
+    </script>
+</body>
+</html>

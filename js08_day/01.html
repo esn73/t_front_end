@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 페이지</title>
+    <style>
+        #wrap{width: 700px; margin: 0 auto;}
+        .clear::after{content:""; display: block; clear: both;}
+        .title{text-align: center;}
+        .left{float: left; width: 50%;}
+        #coffee{width: 100%; border: 4px solid brown; box-sizing: border-box;
+                display: block;} /*box-sizing: border-box;*/
+        .coffee_list{list-style: none; padding: 0;}
+        .coffee_list li{float: left; width: 32%; margin-right: 2%;
+                        border: 4px solid brown; box-sizing: border-box;}
+        .coffee_list li:last-child{margin-right: 0;}
+        .coffee_list li img{width: 100%; display: block; filter: grayscale(1);}
+        .coffee_list img:hover {filter: grayscale(0);}
+coffee_list li img:hover {filter: grayscale(0);}
+        .right{float: right; width: 50%;}
+        .coffee_text{padding: 0; margin-left: 50px;}
+        .coffee_text li{line-height: 2;}
+        .addbtn{width: 100%; padding: 10px 0; text-align: center; margin-left: 30px;
+                margin: 30px 0 20px 30px;}
+        .view{margin-left: 30px;}
+        .detail{margin-left: 30px; line-height: 1.8; font-size: 14x; color: #555;
+                display: none;}
+        #popup{position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+                background-color: rgba(0, 0, 0, 0.7); z-index: 999;
+                display: none;}
+        .modal{background-color: #ffff; width: 300px; padding: 50px;
+                text-align: center; margin: 100px auto;}
+        .modal .close{background-color: brown; color: #fff; border: none;
+                padding: 10px 20px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1 class="title">에디오피아 커피</h1>
+        <div class="left">
+            <img src="images/coffee-blue.jpg" alt="" id="coffee">
+            <ul class="coffee_list clear">
+                <li><img src="images/coffee-blue.jpg" alt="" class="simg"></li>
+                <li><img src="images/coffee-gray.jpg" alt="" class="simg"></li>
+                <li><img src="images/coffee-pink.jpg" alt="" class="simg"></li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul class="coffee_text">
+                <li>상품명: 에디오피아 커피</li>
+                <li>판매가: 9,000원</li>
+                <li>배송비: 3,000원</li>
+                <li>적림금: 200원(2%)</li>
+                <li>로스팅: 2021.10.06</li>
+            </ul>
+            <button class="addbtn">장바구니 담기</button>
+            <a href="#" class="view">상세설명 보기</a>            <!--상세설명 닫기-->
+            <!--상세설명 박스-->
+            <p class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Excepturi esse mollitia quia omnis tempore consectetur earum iure sapiente, 
+                quas ex aperiam! Illum aperiam quos ab molestiae laboriosam numquam inventore voluptatum?</p>
+        </div>
+    </div>
+    <div id="popup">
+        <div class="modal">
+            <h1>주문완료</h1>
+            <button class="close">닫기 x</button>
+        </div>
+    </div>
+    <script>
+        var view=document.querySelector(".view");
+        var detail=document.querySelector(".detail")
+        var coffee=document.getElementById("coffee") //큰이미지
+        var simg=document.getElementsByTagName("simg");//작은 이미지
+        var addbtn=document.querySelector(".addbtn");
+        var popup=document.getElementById("popup")
+        var close=document.querySelector(".close")
+        var flag=true;
+        
+        view.onclick =function(){
+        if(view.innerHTML="상세설명 보기"){
+            detail.style.display="block";
+            view.innerHTML="상세설명 닫기";
+        }else{
+            detail.style.display="none";
+            view.innerHTML="상세설명 보기";
+            }
+            
+        }
+        // simg[1].onclick=function(){
+        //     coffee.setAttribute("src", "images/coffee-gray.jpg")
+        // }
+
+        coffee.onclick=function(){
+            var src= coffee.getAttribute("src");
+            console.log(src);
+        }
+
+        for(var i=0; i<simg.length; i++){
+            simg[i].onclick=function(){
+            var src=this.getAttribute("src");
+            console.log(src);
+            coffee.setAttribute("src", src);
+            }
+        }
+
+        addbtn.onclick=function(){
+            popup.style.display="block";
+        }
+
+        close.onclick=function(){
+            popup.style.display="none";
+        }
+    </script>
+</body>
+</html>

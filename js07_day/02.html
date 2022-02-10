@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>즉시실행 함수(복습)</title>
+</head>
+<body>
+    <script>
+        //(funtion(){}()); 즉시실행함수
+        (funtion(){
+            var num=100;
+
+        menu();
+
+        function menu(){
+            num+=100; //100씩 누적 num=num+100;
+            console.log("num : " + num);
+            var hi="안녕하세요!";
+            console.log(hi);    //내부에서 사용한 지역변수
+        }
+        // alert(hi); //hi is not defined 
+    }());
+
+    (function(){
+
+        var num=200;
+        function menu(){
+            alert(" menu2 : "+num);
+
+        }
+        menu();
+    }());
+    </script>
+</body>
+</html>

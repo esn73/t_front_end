@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탭메뉴2</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrap{width: 500px; margin: 50px auto;}
+        #tab_title{overflow: hidden; background-color: #eee; 
+                border-top: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+            }
+        .tab_btn{background-color: inherit; float: left; border: 0; outline: 0;
+                    cursor: pointer; font-size: 20px; padding: 14px 30px;} /* **inherit상위부모의 컬러값을 똑같이 가져옴 */
+        .tab_btn:hover{background-color: #eee;}
+        .tab_btn.on{background-color: #fff; border-bottom: #fff;}
+
+        #tab_box{padding: 10px 20px; border: 1px solid #ccc; border-top: none;}
+        .tab_con{display: none;}
+        .tab_con.on{display: block;}
+        .tab_con h3{line-height: 4;}
+        .tab_con p{line-height: 2; color: #555; padding-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    <div id="tab_title">
+        <button class="tab_btn on">첫번째</button>
+        <button class="tab_btn">두번째</button>
+        <button class="tab_btn">세번째</button>
+    </div>
+    <div id="tab_box">
+        <div class="tab_con">
+            <h3>첫번째 탭메뉴</h3>
+            <p>Lorem1 ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="tab_con">
+            <h3>두번째 탭메뉴</h3>
+            <p>Lorem2 ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="tab_con">
+            <h3>세번째 탭메뉴</h3>
+            <p>Lorem3 ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+
+    </div> 
+
+    <script>
+        let tab_btn=document.querySelectorAll(".tab_btn"); //탭버튼 배열 -클래스
+        let tab_con=document.querySelectorAll(".tab_con"); //탭 컨텐츠 박스배열
+        
+
+        // tab_btn[1].onclick=function(){
+        //     this.classList.add("on");
+        //     // tab_con[1].style.display="block"/
+        //     tab_con[1].classList.add("on") };
+        for(let i=0; i<tab_btn.length; i++){ //0,1,2
+
+            tab_btn[i].onclick=function(){
+                //초기화 코드 먼저
+
+                for(let i=0; i<tab_btn.length; i++){
+                tab_btn[i].classList.remove("on"); //버튼 배경컬러 원위치
+                tab_con[i].classList.remove("on"); //display="none"
+            }
+
+                tab_btn[i].classList.add("on");
+                tab_con[i].classList.add("on");
+            }
+        }
+            tab_btn[0].click();//처음에 출력화면 
+
+    
+    </script>
+</body>
+</html>

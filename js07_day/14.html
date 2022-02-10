@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 레드/동그라미</title>
+    <style>
+        .box{width: 100px; height: 100px; background-color: yellow;
+            margin: 50px auto;}
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        var box=document.getElementsByClassName("box")//유사배열
+        for(var i=0; i<box.length; i++){
+        box[i].onclick=function(){
+            //초기화코드
+            for(var j=0; j<box.length; j++){
+            box[j].style.backgroundColor="yellow"; 
+            box[j].style.borderRadius="0";
+           
+         }
+            //클릭한 자신만 변경
+            this.style.backgroundColor="red"; //**this는 event를 걸어준 객체
+            this.style.borderRadius="50%";
+
+            }
+
+            box[i].addEventListener("mouseover",function(){
+            this.style.backgroundColor="red"; 
+            this.style.borderRadius="50%";
+            });
+
+            box[i].addEventListener("mouseout",function(){
+            this.style.backgroundColor="yellow"; 
+            this.style.borderRadius="0";
+            });
+        }
+
+
+    </script>
+</body>
+</html>

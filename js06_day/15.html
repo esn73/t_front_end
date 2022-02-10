@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>점심메뉴 이미지 출력하기</title>
+    <style>
+        #wrap{width: 400px; margin: 50px auto; text-align: center;}
+        .imgbox{border:2px solid #ccc;}
+        .imgbox img{width: 100%; display: block;}
+        .menuList{text-align: left;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    <div class="imgbox">
+        <img src="images/menu0.jpg" alt="">
+    </div>
+    <p class="menuTitle">떡볶이</p>
+    <hr>
+    
+    <button class="rdmMenu">점심 메뉴 추천</button>
+    <button class="nextMenu">다음 메뉴 보기</button>
+    <hr>
+    <button class="menuListShow">메뉴 리스트 보기</button>
+     <ul class="menuList"></ul>
+
+</div>
+
+    <script>
+        
+        var menu =["떡볶이", "김밥", "라면", "짜장면", "볶음밥"]; //0~4
+        var imgTag=document.querySelector(".imgbox>img");
+        var menuTitle=document.querySelector(".menuTitle");
+        var menuList=document.querySelector(".menuList");
+
+        var btnRdmMenu=document.querySelector('.rdmMenu')
+        var btnNextMenu=document.querySelector('.nextMenu')
+        var btnMenuListShow=document.querySelector('.menuListShow');
+
+        var num=0;
+
+        btnMenuListShow.addEventListener("click", function(){
+            var liTag="";
+            for(var i=0; i < menu.length; i++){
+                liTag +="<li>" + menu[i] +"</li>";
+            }
+            menuList.innerHTML=liTag;
+        });
+
+        btnNextMenu.addEventListener("click", function(){
+            num++;
+            if (num > menu.length-1) num=0;
+            imgTag.setAttribute("src", "imgaes/menu"+ num + ".jpg");
+            menuTitle.innerHTML=menu[num];
+        });
+
+        btnRdmMenu.addEventListener("click", function(){
+            var rdm=Math.floor(Math.random()*5);
+            console.log(rdm);//0~4
+            imgTag.setAttribute("src", "imgaes/menu"+rdm+ ".jpg")
+            menuTitle.innerHTML=menu[rdm];
+
+        })
+
+    </script>
+</body>
+</html>

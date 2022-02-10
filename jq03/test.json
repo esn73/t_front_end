@@ -1,0 +1,7 @@
+[
+    {"num":1, "name": "홍길동", "age":"30", "score": 100},
+    {"num":2, "name": "아무개", "age":"10", "score": 10},
+    {"num":3, "name": "아이유", "age":"20", "score": 30},
+    {"num":4, "name": "도우너", "age":"22", "score": 80},
+    {"num":5, "name": "둘리", "age":"33", "score": 70}
+]

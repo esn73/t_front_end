@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue gallery</title>
+    <style>
+        h1 { text-align: center; padding: 50px 0; }
+        ul { list-style: none; text-align: center; 
+             display: flex; flex-flow: row wrap; justify-content: space-between; }
+        ul li { width: 30%; padding: 10px; margin: 10px 0; 
+                border: 2px solid #ccc; border-radius: 10px;}
+        .imgbox { overflow: hidden; }
+        ul li img { width: 100%; transition: .5s; }
+        ul li:hover img { transform: scale(1.2); }
+        ul li h2 { font-size: 28px; text-align: center; }
+        ul li p { padding: 10px; color: #555; }
+        .modal { width: 400px; padding: 20px; position: fixed; left: 50%; top: 100px; margin-left: -200px;
+                 background-color: #fff; z-index: 9; border: 2px solid #ccc; box-shadow: 3px 3px 5px #eee; }
+        .modal img { width: 100%; }
+        </style>
+​<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <h1>상품 겔러리</h1>
+    <div id="app">
+        <ul>
+            <template v-for="(item, i) in items">
+            <li v-bind:class="item.proClass"
+            @click="popup">
+                <h2>{{ item.title }}</h2> <!--배열명 단수.속성이름-->
+                <div class="imgbox">
+                    <img v-bind:src="item.proSrc"  v-bind:alt="item.proAlt">
+                </div>
+                <p>{{ item.proTxt}}</p>
+            </li>
+        </template>
+        </ul>
+        <div class="modal" v-on:click="show=false">
+            <h3>{{ items[0].title }}</h3>
+            <div class="imgbox">
+                <img src="items[0].proSrc" v-bind:alt="items[index].proAlt">
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+                index: null,
+                show: false,
+                items:[
+                    {
+                    proClass:"c0",
+                    title:"상품제목 01",
+                    proSrc:"images/pmb1.jpg",
+                    proAlt:"pmb1",
+                    proTxt:"오늘의 할인 상품입니다."
+
+                    },
+                    {
+                    proClass:"c1",
+                    title:"상품제목 02",
+                    proSrc:"images/pmb2.jpg",
+                    proAlt:"pmb2",
+                    proTxt:"오늘의 할인 상품입니다."
+
+                    },
+                    {
+                    proClass:"c2",
+                    title:"상품제목 03",
+                    proSrc:"images/pmb3.jpg",
+                    proAlt:"pmb3",
+                    proTxt:"오늘의 할인 상품입니다."
+
+                    },
+                    {
+                    proClass:"c3",
+                    title:"상품제목 04",
+                    proSrc:"images/pmb4.jpg",
+                    proAlt:"pmb4",
+                    proTxt:"오늘의 할인 상품입니다."
+
+                    },
+                    {
+                    proClass:"c4",
+                    title:"상품제목 05",
+                    proSrc:"images/pmb5.jpg",
+                    proAlt:"pmb5",
+                    proTxt:"오늘의 할인 상품입니다."
+
+                    },
+                    {
+                    proClass:"c5",
+                    title:"상품제목 06",
+                    proSrc:"images/pmb6.jpg",
+                    proAlt:"pmb6",
+                    proTxt:"오늘의 할인 상품입니다."
+
+                    },
+                ]
+            },
+            methods:{
+                popup: function(idx){
+                    this.show=true;
+                    this.index=idx;
+                },
+                close: function(){
+                    this.show="false";
+                }
+
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>속성조작</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+                //1. <a>구글 바로가기 </a> -> 네이버 바로 가기
+            $("button").on("click", function(){
+                $("a").text("네이버 바로가기")
+                
+                //2. 속성 변경 클릭시 네이버 새창 열기
+                $("a").attr("href","https://www.naver.com/")
+                .attr("target","_blank")
+                $("a").attr({
+                    href:"https://www.naver.com/",
+                    target:"_blank"
+                });
+                let info = $("a").attr("target");
+                console.log(info);
+            });
+        })
+    </script>
+</head>
+<body>
+    <a href="https://www.google.co.kr/" target="_blank">구글 바로가기</a>
+    <button>네이버 바꾸기</button>
+</body>
+</html>

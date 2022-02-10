@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parallax</title>
+    <style>
+        html,body{height: 100%;margin: 0; color: #777;}
+        .bg01,.bg02,.bg03{
+            background-position: center; background-repeat: no-repeat;
+            background-size: cover; position: relative; 
+            min-height: 100%;/*고정*/ background-attachment: fixed;/* 배경고정****/
+        }
+        .caption{position: absolute; left: 50%; top: 50%;
+                transform: translate(-50%,-50%); background-color: rgb(0, 0, 0,0.7);
+                color: #fff; padding: 20px; font-size: 24px; letter-spacing: 10px;
+        }
+
+        .bg01{background-image: url(images/bg01.jpg);}
+        .bg02{background-image: url(images/bg02.jpg);}
+        .bg03{background-image: url(images/bg03.jpg);}
+
+        .txt01, .txt01, .txt03{padding: 50px 100px; text-align: justify;
+                                line-height: 1.8;
+        }
+        .txt03{background-color: #282E34; color: #ddd; text-align: center;}
+    </style>
+    </body>
+</head>
+<body>
+<!--     .bg01+.txt01+.bg02+.txt02+.bg03+.txt03+.bg01 -->
+<div class="bg01">
+    <span class="caption">SCROLL Start</span>
+</div>
+<div class="txt01">
+    <h2>HAPPY HAPPY HAPPY</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati fuga quam dicta! Similique earum quisquam praesentium iusto sequi perspiciatis corrupti voluptatem, quis excepturi vitae, voluptas, exercitationem porro sapiente animi error.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati fuga quam dicta! Similique earum quisquam praesentium iusto sequi perspiciatis corrupti voluptatem, quis excepturi vitae, voluptas, exercitationem porro sapiente animi error.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati fuga quam dicta! Similique earum quisquam praesentium iusto sequi perspiciatis corrupti voluptatem, quis excepturi vitae, voluptas, exercitationem porro sapiente animi error.</p>
+</div>
+<div class="bg01">
+    <span class="caption">Test Demo1</span>
+</div>
+<div class="txt02">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas exercitationem veritatis natus est, dolore quae ipsum molestiae unde ut laborum. Quod aperiam placeat ullam veniam? Temporibus soluta adipisci dolores cupiditate.</p>
+</div>
+<div class="bg02">
+    <span class="caption">Test Demo2</span>
+</div>
+<div class="txt03">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorem, voluptas molestias nesciunt modi fugit itaque laboriosam mollitia totam labore tenetur iusto maiores adipisci rerum, voluptatem consequatur quo aliquam libero.</p>
+</div>
+<div class="bg03">
+    <span class="caption">SCROLL end</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>아코디언 메뉴</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0; }
+        ul, li{list-style: none;}
+        a{text-decoration: none; color: #999; }
+        /* 대메뉴 a + 서브메뉴 a*/
+        .aco_menu{position: absolute; width: 50%; height: 100%; background-color: #262626;
+                    box-sizing: border-box  ;}
+        .aco_menu a {display: block; padding: 20px; border-top: 1px solid #2e2e2e;
+                    border-bottom: 1px solid #2e2e2e;}
+
+        /*대메뉴 a*/
+        /* .aco_menu>li>a{} */
+        .aco_menu a.m{background-color: #111; font-weight: bold;}
+        .aco_menu a.m.on{color: tomato;}
+
+        /*서브메뉴*/
+        .aco_menu ul{display: none;}
+        .aco_menu ul a{background-color: #3a3a3a; text-indent: 20px;}
+
+        .aco_menu ul.on{display: block;}
+        .aco_menu ul.on a.on{color: turquoise;}
+
+    
+
+    </style>
+    <script>
+        $(function(){
+        $("a").click(function(){
+        //    $(this).addClass("on")
+   
+        // $(this).next("ul").addClass("on"); //ul.on{display:block}
+        // $(this).next("ul").addClass("on").parent("li").siblings("li").children("ul").removeClass("on");
+        // $(this).parent("li").siblings("li").children("a").removeClass("on")
+        // $(this).toggleClass("on") //a.on
+        // $(this).next("ul").addClass("on") //ul.on
+        // $(this.parent("li").siblings("li").children().removeClass("on"); //나머지 형제들의  a, ul
+        $(this).addClass("on").next("ul").addClass("on").parent("li").siblings("li").children().removeClass("on")
+
+        });
+    });
+    </script>
+</head>
+<body>
+    <ul class="aco_menu">
+        <li>
+            <a href="#" class="m">대메뉴 1</a>
+            <ul>
+                <li><a href="#">서브메뉴 1-1</a></li>
+                <li><a href="#">서브메뉴 1-2</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="m">대메뉴 2</a>
+            <ul>
+                <li><a href="#">서브메뉴 2-1</a></li>
+                <li><a href="#">서브메뉴 2-2</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="m">대메뉴 3</a>
+            <ul>
+                <li><a href="#">서브메뉴 3-1</a></li>
+                <li><a href="#">서브메뉴 3-2</a></li>
+                <li><a href="#">서브메뉴 3-3</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

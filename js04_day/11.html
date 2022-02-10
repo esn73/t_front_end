@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>점심메뉴 출력</title>
+</head>
+<body>
+    <input type="text" id="menu" placeholder="메뉴를 등록하세요.">
+    <button id="menuBtn" onclick="addMenu()">메뉴 등록</button>
+    <hr>
+    <ul id="menuList"></ul>
+    <hr>
+    <button id="reMenuBtn">추천메뉴</button>
+    <p id="result"></p>
+    <script>
+        var menuList=[]; //빈배열
+        function addMenu(){
+        var menu=document.getElementById("menu").value;
+        console.log(menu);
+
+        menuList.push(menu);
+        console.log(menuList);
+
+        var list=""; //빈문자열
+        // document.write("test"); body 안에 기존 태그 다 삭제
+        for(var i=0; i<menuList.length; i++){
+            list +="<li>"+ menuList[i] +"</li>";
+        } document.getElementById("menuList")=list;
+    }
+    </script>
+</body>
+</html>

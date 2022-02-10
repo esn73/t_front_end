@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 기본 템플릿</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+    
+</head>
+<body>
+    <div id="app">
+        <h3>{{test}}</h3> <!--1234-->
+        <p>{{message}}</p> <!--안녕하세요-->
+        <p>{{message + "좋은 하루입니다."}}</p>
+        <p>{{message.split("").reverse().join("")}}</p> <!--요세하녕안-->
+        <my-com v-bind:propsdata="message"></my-com> <!-- 안녕하세요 -->
+    </div>
+    <script>
+        Vue.component("my-com", {
+            props: ["propsdata"],
+            template: "<q> {{propsdata}} </q>"
+        });
+        new Vue({
+            el: "#app" , 
+            data:  {
+                message:"안녕하세요",
+                test:1234
+            },
+        });
+    </script>
+    
+</body>
+</html>

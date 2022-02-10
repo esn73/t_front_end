@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지원서</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+        #wrap{border: 1px solid #000; width: 500px; margin: 0 auto;
+            padding: 10px; }
+            fieldset{border: none;}
+            legend{font-weight: bold; font-size: 20px;}
+            hr{margin-bottom: 30px;}
+            ul{list-style: none}
+            ul li{line: height 2;}
+            textarea{width: 100%;}
+            .btnBox{text-align: center;}
+            .btn1, .btn{padding: 10px 20px; margin-top: 30px; border: none; #fff;}
+            table{width: 100%;
+                border-collapse: collapse; font-size: 15px; text-align: center;}
+           .btn1{background-color:slateblue; color: snow;}
+            th, td{boder: 1px solid #555 padding: 5px 10px;}
+            .lightsalmon {background-color: lightsalmon; color: #fff;}
+            p{letter-spacing: -0.5px;}
+            p strong{color: blue;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>프런트엔드 웹개발 지원서</h1>
+        <p>HTML,CSS,Javascript에 대한 기술적 <strong>이해와 경험</strong>이 있는 분을 찾습니다.</p>
+        <hr>
+        <fieldset>
+            <legend>개인정보</legend>
+            <ul>
+                <li>
+                    <label for="user_id">이름</label>
+                    <input type="text" id="user_id" placeholder="이름을 입력해주세요." autofocus>
+                </li>
+                <li>
+                    <label for="tel1">연락처</label>
+                    <input type="tel1" id="tel_1" size="3" maxlength="4"> -
+                    <input type="tel1" id="tel_2" size="4" maxlength="4"> -
+                    <input type="tel1" id="tel_3" size="4" maxlength="4">
+                </li>
+                <li>
+                    <label for="email_1">이메일</label>
+                    <input type="text" id="email" size="10"> @
+                    <select name="" id="">
+                        <option>선택</option>
+                        <option naver="">naver.com</option>
+                        <option daum="">daum.net</option>
+                        <option google="">google.com</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>지원분야</legend>
+            <ul class="list">
+                <li><label><input type="radio" name="field" checked>웹퍼블리셔</label></li>
+                <li><label><input type="radio" name="field">웹프론트</label></li>
+                <li><label><input type="radio" name="field">웹백앤드드</label></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>지원동기</legend>
+            <textarea name="" id="" cols="30" rows="10" placeholder="지원동기를 간략하게 입력해주세요."></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>작업스킬</legend>
+            <!--테이블작업-->
+            <table>
+                <colgroup>
+                <col style="background-color: tomato;">
+                <col>
+                <col>
+                </colgroup>
+
+                    <tr style="background-color: wheat;">
+                        <th rowspan="2">구분</th>
+                        <th class="lightsalmon">html/CSS</th>
+                        <th class="lightsalmon">Javascript</th>
+                        <th class="lightsalmon">jQuery</th>
+                    </tr>
+
+                    <tr>
+                        <td>상급</td>
+                        <td>상급</td>
+                        <td>중급</td>
+                    </tr>
+                    <tr>
+                        <th>자격증</th>
+                        <td colspan="3">웹디자인기능사 / 정보처리기사</td>
+
+                    </tr>
+                
+
+            </table>
+        </fieldset>
+        <div class="btnBox">
+            <input type="submit" value="접수하기" class="btn1">
+            <input type="submit" value="다시작성" class="btn2">
+        </div>
+    </div>
+</body>
+</html>

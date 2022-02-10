@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classList</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        button{background-color: skyblue; color: #fff;
+                padding: 15px 40px; border: none; cursor: pointer;}
+        .menu{list-style: none; width: 300px; box-shadow: 3px 3px 10px #ccc;
+            display: none;}
+        .menu li{padding: 12px 20px;}
+        .menu li a{ color: #333;text-decoration: none;}
+        .menu li:hover a{color: slateblue;}
+
+        .on{background-color: teal;}
+        .show{display: block;}
+        .show a{color: #fff;}
+    </style>
+</head>
+<body>
+    <button>메뉴리스트 </button>
+        <ul class="menu">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">공지사항</a></li>
+        </ul>
+   <script>
+       var btn=document.querySelector("button");
+       var menuBox=document.querySelector(".menu")
+
+       btn.onclick=function(){
+
+        menuBox.classList.toggle("show");
+        this.classList.toggle("on");
+       }
+   </script>
+</body>
+</html>

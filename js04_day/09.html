@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배경 칼라 랜덤 출력</title>
+    <style>
+        body{}
+        .red{background-color: red;}
+        .blue{background-color: blue;}
+        .pink{background-color: pink;}
+        .green{background-color: green;}
+        .violet{background-color: violet;}
+        .navy{background-color: navy;}
+        .orange{background-color: orange;}
+        .yellow{background-color: yellow;}
+        .brown{background-color: brown;}
+        .skyblue{background-color: skyblue;}
+
+    </style>
+</head>
+<body>
+    <h1 id="colorText"></h1>
+    <script>
+        let rdm=Math.floor(Math.random()*10+1)
+        console.log(rdm);
+
+        let color;
+        switch(rdm){
+            case 1: color="<span class='red'>RED</span>";break
+            case 2: color="<span class='blue'>Blue</span>";break
+            case 3: color="<span class='pink'>Pink</span>";break
+            case 4: color="<span class='green'>Green</span>";break
+            case 5: color="<span class='violet'>Violet</span>";break
+            case 6: color="<span class='navy'>Navy</span>";break
+            case 7: color="<span class='orange'>Orange</span>";break
+            case 8: color="<span class='yellow'>Yellow</span>";break
+            case 9: color="<span class='brown'>Brown</span>";break
+            case 10: color="<span class='skyblue'>Skyblue</span>";break
+            // default:alert("none");
+        }
+        document.getElementById("colorText").innerHTML
+        =`오늘의 추천 컬러:${color}`;
+    </script>
+</body>
+</html>

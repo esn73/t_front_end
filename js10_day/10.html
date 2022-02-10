@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sticky 효과</title>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { margin: 0; }
+      header { text-align: center; padding: 30px; }
+      nav { background-color: #333; margin:0; overflow: hidden;
+            transition: .5s;  }
+      .menu { padding: 0; list-style: none; text-transform: uppercase;
+              width: 70%; max-width: 800px; margin: 0 auto; }        
+      .menu li { display: inline-block; padding: 10px 30px; }        
+      .menu li a { color: #fff; text-decoration: none; }      
+      .menu li:hover a { color: skyblue; }
+
+      #content { width: 70%; max-width: 800px; padding: 30px; 
+                 margin: 0 auto; }
+      #content p { line-height: 1.8; font-size: 18px; color: #555; }
+
+      .sticky { position: fixed; top: 0; width: 100%;
+                background-color: darkorchid; padding: 30px 0; }
+      .sticky + #content { padding-top: 100px; }
+
+      #box{width: 100%; height: 8px; background-color: #ccc;}
+      #box .bar{height: 100%; background-color: skyblue; width: 0%;}
+
+      .topBtn{display: block; width: 50px; height: 50px; background-color: darkorchid;
+              text-decoration: none; position: fixed; right: 20px;
+            bottom: 50px; z-index: 10; line-height: 50px; opacity: 0;
+            visibility: hidden; transition: 1s;}
+      .on{opacity: 1; visibility: visible;}
+
+    </style>
+</head>
+<body>
+    <header id="top">
+        <h1>메뉴단 고정</h1>
+        <p>sticky 메뉴 상단 고정 효과</p>
+    </header> 
+    <nav>
+      <ul class="menu">
+         <li><a href="#">Home</a></li>
+         <li><a href="#">NOTICE</a></li>
+         <li><a href="#">CONTACT</a></li>
+      </ul>  
+      <div id="box">
+         <div class="bar"></div><!-- 스크롤된 양을 가로바로 보여주기 -->
+      </div>
+    </nav>
+    <div id="content">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus vel sequi laborum at. Repellat corrupti similique numquam facere eaque, sunt quas placeat quam reiciendis illo asperiores deserunt eligendi quod nostrum!</p>
+    </div>
+    <a href="#top" class="tobBtn">TOP</a>
+    <script>
+        let nav = document.querySelector("nav");
+        let navTop = nav.offsetTop; // 해당 태그의 상단 좌표
+        console.log(navTop);   // 183
+ 
+        window.onscroll = function(){
+            // window.pageYOffset -> 세로방향 스크롤 크기
+            let scroll = window.pageYOffset;
+            console.log(scroll);
+ 
+            if ( scroll >= navTop ) {  // nav박스의 상단 위치만큼 스크롤하면 
+                 nav.classList.add("sticky");  
+            } else {
+                 nav.classList.remove("sticky");  
+            }
+ 
+            // 스크롤된 양을 가로바 모양으로 출력
+            let scrollHeight = document.documentElement.scrollHeight; // 스크롤 전체 세로길이
+            let clientHeight = document.documentElement.clientHeight; // 현제 보이는 화면길이
+ 
+            // 화면에 안보이는 아직 스크롤이 안된 남아있는 화면 크기
+            let height = scrollHeight - clientHeight;   
+ 
+            // 스크롤된 양을 % 전환 : 스크롤된 양 -> ( 스크롤된 Y좌표 / 남은 화은 화면길이 ) * 100
+            let scrolled = ( scroll / height ) * 100;
+            console.log(scrolled);
+ 
+            let bar = document.querySelector(".bar");
+            bar.style.width = scrolled + "%";
+
+
+            let topBtn=document.querySelector('.topBtn')
+            if(scroll>200){
+                topBtn.className="tobBtn on";
+            }else{
+                topBtn.className="topBtn"
+            }
+            }
+        }
+    </script>
+ ​
+</body>
+</html>

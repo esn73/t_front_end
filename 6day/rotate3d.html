@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rotate3d:회전</title>
+    <style>
+        #origin{border: 1px solid #555; float: left; perspective: 1000px; 
+                margin: 30px;}
+        #origin>div{width: 350px; height: 200px; overflow: hidden;
+                    transition-property: transform; /* css 속성이람 */
+                    transition-duration: .5s; /* 중간단계 랜더링 시간 */
+                    transition-timing-function: ease; /* 가속도 */
+                    transition-delay: 0s; /* 애니메이션 지연시간*/    
+                    transform-origin: left right; /*기준ㅊ 축 변경*/               
+                }
+
+
+                
+        #origin>div>img{width: 100%;}
+
+        #origin:hover .rotate{transform: rotate(45deg);}
+        #origin:hover .rotateX{transform: rotateX(180deg);} 
+        #origin:hover .rotateY{transform: rotateY(180deg);}
+        #originhover .rotateZ:{transform: rotateZ(-180deg);}
+        #origin:hover .rotate3d{transform: rotate3d(1,1,1,45deg);}
+    </style>
+</head>
+<body>
+    <div id="origin">
+        <div class="rotate">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotateX">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotateY">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotateZ"><!--2D 회전과 축이 같다-->
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotate3d">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+</body>
+</html>

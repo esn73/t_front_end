@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json 데이터 문자열 누적연산 출력</title>
+    <style>
+        table { border-collapse: collapse; width: 70%; margin: 0 auto; }
+        th { background-color: darkcyan; color: #fff; padding: 10px; }
+        th, td { border: 1px solid #ccc; padding: 5px; text-align: center; }
+        table tr th:nth-child(1) { width: 10%; }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $.ajax({
+                    url: "test.json",
+                    dataType:"json",
+                    success:function(data){
+                        console.log(data);
+
+
+
+                        let $tbody=$("<tbody>"); //문자열 누적 연산을 위한 빈문자열 선언
+                        $.each(data, function(index, value){ //{}
+                            let=$tr=$("<tr>").append( //선택자.appen 자식요소로 붙일 내용
+                                $("<td>").text(value.num), //<td>1</td>
+                                $("<td>").text(value.name),
+                                $("<td>").text(value.age),
+                                $("<td>").text(value.score),
+
+                                );
+                                $("tbody").append($tr);
+                        });
+
+
+                        
+                        $("table").append($tbody); //부모박스안에 tbody 변수 누적 문자열 붙이기
+
+                    },
+                    error:function(){
+                        alert("데이터 연동 실패!")
+                    }
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+   <button>점수 출력!</button> 
+   <table>
+        <caption>시험점수 출력 테이블</caption>
+        <thead>
+            <tr>
+                <th>num</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>점수</th>
+            </tr>  
+        </thead>
+        <!-- <tbody> 실제 데이터가 연동 출력되는 부분  </tbody> -->
+        <tfoot>
+            <tr>
+                <td colspan="4"> "우리반 점수 출력 끝!" </td>
+            </tr>
+        </tfoot>
+   </table>
+</body>
+</html>
+​

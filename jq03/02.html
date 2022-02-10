@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax 메모장 파일 가져오기</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $f(function () {
+            
+    //         $.ajax({
+    //  url: 가져올 페이지
+    //  dataType: 요청한 데이터 형식 ( html, xml, json, text(메모장) )
+    //  success: function() {
+    //       전송에 성공하면 실행될 코드
+    //  },
+    // error: function(){
+    //      전송에 실패하면 실행될 코드
+    //  }
+
+    $("button").click(function () {
+        
+
+    $.ajax({
+        type:"get",
+        url: "data/text.txt",
+        dataType: "text",
+        success: function (data) { //출력코드
+            $("#txt").html(data)
+        },
+            error:function () { //실패알림
+                alert("데이터 로딩이 실패 했습니다.")
+            }
+    });
+});
+});
+    </script>
+</head>
+<body>
+    <button>메모장 출력</button>
+    <p id="txt">
+
+    </p>
+</body>
+</html>

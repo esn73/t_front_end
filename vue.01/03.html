@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 기본 템플릿</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    
+</head>
+<body>
+    <div id="app"> {{message}}
+    </div>
+    <script>
+        new Vue({
+            el: "#app" , //인스턴스 부착 지점
+            data:  {//인스턴스 데이터 속성 -> 변수 총괄 
+                message:"안녕하세요",
+                num:1234,
+            },
+
+        beforeCreate: function(){
+            console.log(beforeCreate);
+        },
+            created: function(){
+                console.log("created");
+            },
+            mounted: function(){
+                console.log("mounted");
+            },
+            updated: function(){
+                console.log("updated");
+            },
+    });
+    </script>
+    
+</body>
+</html>

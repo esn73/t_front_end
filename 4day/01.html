@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수목원 안내</title>
+    <style>
+        #wrap{width: 700px; margin: 0 auto; padding: 20px 30px;
+            border: 1px solid #ccc ;}
+        .menu{margin-bottom: 20px;}
+        .menu ul{list-style: none; padding: 0; text-align: center;}
+        .menu ul li{display: inline-block; padding: 0 15px; line-height: 1;
+                    font-size: 16px;
+                    border-right: 1px solid #ccc;}
+        .menu ul li a{text-decoration: none;}
+        .last{border-right: none;}
+        .menu ul li:last-child{border-right: none;}
+
+        .imgbox{}/* block 이면 부모박스의 너비를 최대한 가져옴*/
+        .imgbox img{width: 100%;} /* 100%->부모박스의 너비를 최대한으로 가져옴*/
+
+
+
+        .contents{}
+        .contents.main_title{border-bottom: 1px solid #ccc;padding-bottom: 10px; font-size: 26px;}
+        .contents.sub_title{font-size: 18px; margin-top: 30px ;}
+        .contents ul{background-color: #f6fdf7; border: 1px solid #bcd3be;}
+        .contents .list2{list-style-image: url(images/bulit_green.gif);}
+        .contents .text{background-color: #f6fdf7; border: 1px solid #bcd3be;
+                        padding: 15px 40px;text-indent: -18px;}
+        
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="menu">
+        <ul>
+            <li><a href="#">수목원 소개</a></li>
+            <li><a href="#">방문안내</a></li>
+            <li><a href="#">관람안내</a></li>
+            <li><a href="#">개인/단체 체험</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">공지사항</a></li>
+        </ul>
+        </div>
+        <div class="imgbox">
+            <img src="images/main_image.jpg" alt="수목원이미지">
+        </div>
+        <div class="contents">
+            <h1 class="main_title">+ 방문안내</h1>
+            <h2 class="sub_title">1.이용요금</h2>
+                <ul class="list1">
+                    <li>평일 : 8,000원</li>
+                    <li>주말/공휴일 : 10,000원</li>
+                </ul>
+            <h2 class="sub_title">2.교통안내</h2>
+                <ul class="list2">
+                    <li>버스 : 터미널(서울 또는 지방 터미널 등)에서 출발하여 양평 터미널 도착</li>
+                    <li>지하철 : 용산역 또는 청량리역에서 출발하여 용문역 도착</li>
+                    <li>택시 : 양평 터미널이나 용문역에서 택시 이용</li>
+                </ul>
+            <h2 class="sub_title">3.관람 유의사항</h2>
+            <p class="text">
+                ※ 수목원은 자연과 더불어 사는 우리 인간에게 매우 소중한 존재입니다. <br>          
+                 식물이나 시설을 훼손하거나 타인에게 방해가 되는 행동은 삼가시기 바랍니다.  <br>        
+                방문해주신 모든 분께 감사드립니다.^^</p>
+        </div>
+    </div>
+</body>
+</html>

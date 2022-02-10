@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery입력</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // alert("test!")
+            $("button").click(function(){
+                alert("야호!");
+                console.log("안녕하세요!")
+                $("p").text("<q>안녕하세요</q>") // .innerText->태그도 그대로 텍스트로 노출됌 <q>안녕하세요</q>
+                $("h1").html("<q>안녕하세요</q>") // .innerHtml->태그해석 "안녕하세요"
+                $("input").var("안녕하세요!") // .value->/.val
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+    <h1></h1>
+    <input type="text">
+    <button>입력</button>
+    <!-- 1. alert, console / 2.text, html / 3.input -->
+</body>
+</html>

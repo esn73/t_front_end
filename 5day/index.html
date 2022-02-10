@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타벅스</title>
+    <style>
+        body{margin: 0;}
+        
+        /* #wrap{width: 100%;} 기본으로 width 100 굳이 작성하지않음 */
+
+        header{padding-top: 20px;}
+        .title{background-image: url(5day/images/logo.jpg); 
+                background-repeat: no-repeat; line-height: 2; margin: 0 auto;
+                width: 78px; height: 75px; overflow: hidden; text-indent: 999em;}
+                /* 1em=16px ex(999*16)=15,984px */
+        .menu{}
+        .menu ul{ padding: 0; list-style: none; width: 600px; margin: 20px auto;}
+        .menu ul li{float: left; font-size: 18px; width: 150px;
+                    text-align: center; position: relative;}
+        .menu ul li:first-child a{color: red;}
+        .menu ul li:nth-child(2) a{color: greenyellow;}
+        .menu ul li:nth-child(3) a{color: orange;}
+
+        .menu ul li::after{content:"|"; color: #ccc; position: absolute; top:0; right: 0;;}
+        .menu ul li:last-child::after{display: none;}
+        .menu ul li a{text-decoration: none; color: #333;}
+        .clear::after{ content:""; display: block; clear: both;}
+        /* .clear::after{ content:""; display: block; clear: both;} 기본값 외울것 */
+        #visual{background-image: linear-gradient(to top, #1e669f, #69ccf3); height: 400px;} 
+        .inner{width: 1000px; margin: 0 auto; position: relative;}
+        .main_title{background-color: green; color: #fff; padding: 5px 10px; position: absolute;
+                    font-size: 24px;
+                    top: 70px; left: 0; text-transform: uppercase; }
+        .sub_title{position: absolute; top: 120px; left: 0; font-size: 22px; color: #fff;}
+        #visual .btn{position: absolute; top: 210px;  background-color: transparent ;
+                    border: 1px solid #fff; color: #fff; padding: 10px 20px;}
+        #visual img{position: absolute; right: 0%; right: 0; width: 15%;}
+        #visual img:nth-of-type(1){top: 50px; left: 500px; }
+        #visual img:nth-of-type(2){top: 70px; left: 600px; z-index: 1;}
+        #visual img:nth-of-type(3){top: 80px; left: 700px; }
+
+        #visual .btn:hover{background-color: #fff; color: @0f519;}
+
+        main{width: 1000px; margin: 20px auto;}
+        main section{height: 100px; border: 1px solid #ccc; margin-bottom: 20px; float: left;
+                    box-sizing: border-box; }
+         /*     box-sizing: border-box; 박스사이즈 2px 제외할때 */
+        main section:nth-child(1){width: 49%; margin-right: 2%;}
+        main section:nth-child(2){width: 49%;}
+        main section:nth-child(3){width: 32%; margin-right: 2%; }
+        main section:nth-child(4) {width: 32%; margin-right: 2%;}
+        main section:nth-child(5) {width: 32%; }
+        
+        
+        footer{border-top: 1px solid #555; background-color: #ddd;
+                padding: 10px 0;}
+        footer nav{width: 1000px; margin: 0 auto;}
+        .btm_menu{padding: 0; list-style: none;}
+        .btm_menu li{background-color: #555; display: inline-block; padding: 10px 20px; }       
+        .btm_menu li a{text-decoration: none; color: #eee ;}
+        .copy{text-align: center;}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1 class="title">스타벅스</h1>
+            <nav class="menu">
+                <ul class="clear"> 
+                    <li><a href="#">회사소개<!--after |--></a></li>
+                    <li><a href="#">매장안내</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <!-- clear:both -->
+                </ul>
+            </nav>
+        </header>
+        <div id="visual">
+            <div class="inner">
+                <h2 class="main_title">starbucks</h2>  <!--  #visual img:nth-child(1) -->
+                <p class="sub_title">나이트로 콜드브르 글라스를 드립니다.</p>
+                <button class="btn">바로가기</button>
+                <img src="5day/images/st01.png" alt="1"> <!--  #visual img:nth-child(4) -->
+                <img src="5day/images/st02.png" alt="2">
+                <img src="5day/images/st03.png" alt="3">
+            </div>
+        </div>
+        <main class="clear">
+            <!-- section*5>{컨텐츠$} -->
+            <section>컨텐츠1</section>
+            <section>컨텐츠2</section>
+            <section>컨텐츠3</section>
+            <section>컨텐츠4</section>
+            <section>컨텐츠5</section>
+        </main>
+        <footer>
+            <nav>
+                <ul class="btm_menu">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">법적공지</a></li>
+                    <li><a href="#">위치안내</a></li>
+                </ul>
+                <p class="copy">copyright</p>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>모바일 슬라이드 메뉴</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        .body{margin: 0; overflow-x: hidden;} /*overflow-x: hidden; */
+        .toggle{width: 30px; position: absolute; right: 50px; top: 20px; }
+        .toggle span{background-color: #000;  display: block; height: 2px;
+                    margin: 7px 0;} 
+        /* 100vw ->화면 영역 가로 100% 100vh->화면 영역세로길이 100%*/
+        .sidnav { width: 300px; height: 100vh; background-color: rgba(0, 0, 0, 0.7);
+                box-sizing: border-box;
+                color: #ffff ; padding: 50px 20px;
+                margin-left: 0; /*-400px*/ transition: 1s;}
+        .sidnav button {float: right;}
+        .sidnav ul{margin-top: 50px;}
+        .sidnav ul li {line-height: 2;}
+    </style>
+    <script>
+        $(function(){
+            $(".toggle").click(function(){
+                if($(".sidnav").css("margin-left")=="-400px"){
+                    $(".sidnav").css("margin-left", 0);
+                }else{
+                    $(".sidnav").css("margin-left", -400)
+                }
+            });
+            $(".sidnav button").click(function(){
+                $(".sidnav").css("margin-left", -400)
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="sidnav">
+        <button>닫기 x</button>
+        <ul>
+            <li>Menu 01</li>
+            <li>Menu 02</li>
+            <li>Menu 03</li>
+        </ul>
+    </div>
+</body>
+</html>

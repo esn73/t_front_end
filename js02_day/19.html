@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const day=10000;
+        var pr1=prompt("식비를 입력해주세요");
+        var pr2=prompt("교통비를 입력해주세요");
+        var pr3=prompt("기타 사용금액 입력해주세요");
+        // var total=pr1+pr2+pr3 // 문자+문자=>문자문자
+        console.log(total, typeof pr1); //string
+        var total=Number(pr1)+Number(pr2)+Number(pr3);
+        console.log(total, typeof total)
+
+    if(day>total){
+        document.write(day-total+"원 남았으니 용돈관리를 잘했습니다.");
+
+    }else{
+        document.write(total-day+"원 부족하니 용돈관리를 잘 못했습니다.");
+    }
+</script>
+
+</body>
+</html>

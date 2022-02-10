@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+            <script>
+        var rdm = Math.random();
+            rdm = Math.floor(rdm*3 + 1);
+
+            console.log(rdm);
+
+            var game = prompt("가위, 바위, 보 중에서 하나 입력해주세요")
+            var result;
+            switch(game){
+                case "가위": result = 1;
+                break;
+                case "바위": result = 2;
+                break;
+                case "보": result = 3;
+                break;
+                default: alert("다시 입력해주세요");
+                location.reload();
+            }
+            document.write(`내가 낸 숫자:${result}/컴퓨터가 낸 숫자:${rdm}<br>`);
+            document.write("<img src='images/math_img_"+result+".jpg'>");
+            document.write("<img src='images/math_img_"+rdm+".jpg'>","<hr>");
+
+            if(result - rdm == -2 || result - rdm == 1){
+
+                document.write("<h1>이겼습니다</h1>");
+                
+            }else if(result - rdm == -1 || result - rdm == 2) {
+              
+              document.write("<h1>졌습니다</h1>");
+            }else {
+              
+              document.write("<h1>비겼습니다</h1>");
+            }
+
+    
+    </script>
+    
+</body>
+</html>

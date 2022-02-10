@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XML 데이터 가져오기</title>
+    <style>
+        table { border-collapse: collapse; }
+        td { border: 1px solid #ccc; padding: 5px; }
+        tr:nth-child(2n) { background-color: #eee; }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url: "data/dataset.xml",
+                dataType: "xml",
+                success: function(data){
+                    // console.log(data);
+                    let $record = $(data).find("record");  
+                    // 전체 데이터 덩어리에서 record 단위로 찾기 
+                    // 0~99 record 배열 만들기 [record,record,record,record...]
+                    console.log($record);
+
+                    if ( $record.length > 0 ) {
+                         let $table = $("<table>"); 
+                         
+                         // $.each(배열명, function(index, value){});
+                         $.each($record, function(index, value){
+                             let $id = $(value).find("id").text();
+                             let $first_name = $(value).find("first_name").text();
+                             let $last_name = $(value).find("last_name").text();
+                             let $email = $(value).find("email").text();
+                             let $gender = $(value).find("gender").text();
+
+                             let $tr = $("<tr>").append(
+                                 $("<td>").text($id),
+                                 $("<td>").text($first_name),
+                                 $("<td>").text($last_name),
+                                 $("<td>").text($email),
+                                 $("<td>").text($gender)
+                             );
+                             // console.log($tr);
+                             $table.append($tr);
+                         }); 
+                         $("#wrap").append($table);  
+                    }
+                },
+                error: function(){
+                    alert("데이터 연결이 실패했습니다");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+   <h1>XML 데이터 출력하기</h1>
+   <div id="wrap"></div> 
+</body>
+</html>
+​

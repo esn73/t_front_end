@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱태그</title>
+    <style>
+        #wrap{width: 600px; margin: 0 auto;}
+        #wrap *{border: 1px solid #ccc;}
+        .clear::after{content:""; display: block; clear: both;}
+
+        header{}
+        header h1{float: left;}
+        header nav{float: right;}
+        header nav ul{ list-style: none; padding: 0; overflow: hidden;}
+        header nav ul li{float: left; padding: 10px 20px;
+            background-color: tomato; color: #fff
+            ;}
+        header nav ul li:hover{background-color: crimson;}
+        main{margin: 10px 0; padding: 10px; background-color: yellow;}
+        aside{float: left; width: 20%; height: 200px;}
+        section{float: right; width: 70%;}
+        footer{background-color: #555; color: #fff;
+            text-align: center; padding: 10px 0;
+            
+            ;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header class="clear">
+        <h1>LOGO</h1>
+        <nav>
+            <ul>
+                <li>menu01</li>
+                <li>menu02</li>
+                <li>menu03</li>
+                <li>menu04</li>
+            </ul>
+        </nav>
+        </header>
+        <main>
+            <aside>배너단</aside>
+            <section>본문단</section>
+        </main>
+
+        <footer>
+            <p>copyright</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let  tagA=document.createElement("a")
+        let text=document.createTextNode("네이버 바로가기")
+        let href=document.createAttribute("href")
+        let target=document.createAttribute("target")
+        href.value="https://www.naver.com/"
+        target.value="_blank"
+
+
+        tagA.setAttributeNode(href);
+        tagA.setAttributeNode(target);
+
+        tagA.appendChild(text);
+        document.body.appendChild(tagA);
+    </script>
+</body>
+</html>

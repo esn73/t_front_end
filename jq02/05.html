@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-easing 가속도</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <style>
+        div[id^="box"] {width: 100px; height: 100px; position: absolute; left: 100px;}
+        #box{background-color: skyblue;}
+        #box2{background-color: crimson; border-radius: 50%;}
+
+        #box2.on{animation: ani 3s cubic-bezier(0,0,0,0) infinite;}
+        #box2.off{animation-play-state: paused;}
+        
+        @keyframes ani{
+            from{ transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".btn1").on("click", function(){
+                $("#box").delay(2000).animate({left:500},5000)
+            });
+            $(".btn2").on("click",function(){
+                $("#box2").addClass("on").animate({top:600}, 1000, "easeOutbounse", function(){
+                    $(this).addClass("off");
+                });
+            });
+            $("#box").hover(function(){
+                $(this).animate({width:600}, 1000);
+            }, function(){
+                $(this).animate({width: 100}, 1000);
+            });
+        })
+    </script>
+</head>
+<body>
+    <button class="btn1">동작</button>
+    <button class="btn2">토글</button>
+    <hr>
+    <div id="box"></div>
+    <div id="box2">ani</div>
+</body>
+</html>

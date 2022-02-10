@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>매개변수</title>
+</head>
+<body>
+    <script>
+        var txt="안녕하세요";
+        function myName(name, age=0, area="서울"){ //**입력안했을 경우 초기값 설정
+            document.write(`${name}씨는 나이가 ${age}살이고 ${area}에 살고 있습니다.<br>`)
+        }
+
+        myName("홍길동", 20, "서울");
+        myName("김안나", 32, "부산")
+        myName("아무개")
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃2</title>
+    <style>
+body { margin: 0; }
+.clear::after { content: ""; display: block; clear: both; }
+#wrap {  }
+header { background-color: #ddd; border: 1px solid #333; 
+         padding: 10px 0; }
+.inner { width: 900px; margin: 0 auto; 
+         border: 1px solid red; } 
+.logo { float: left; } 
+.menu { float: right; } 
+.menu ul { list-style: none; padding: 0; }
+.menu ul li { display: inline-block;
+              width: 100px; height: 50px; 
+              background-color: #333; color: #fff;
+              text-align: center; line-height: 50px; }
+.menu ul li:hover { background-color: #555; }
+main { width: 900px; margin: 20px auto;  }
+main section { border: 1px solid #333; height: 100px; 
+               float: left; box-sizing: border-box; 
+               margin-bottom: 10px; }
+.box1 { width: 49%; margin-right: 2%;  }
+.box2 { width: 49%; }
+.box3 { width: 32%; margin-right: 2%; }
+.box4 { width: 32%; margin-right: 2%; }
+.box5 { width: 32%; }
+footer { background-color: #ddd; border: 1px solid #333; 
+         padding: 10px 0; }
+footer .inner { position: relative; }         
+footer p { text-align: center; }
+footer span { position: absolute; width: 50px; height: 50px;
+              background-color: #333; border-radius: 50%;
+              color: #fff; text-align: center; line-height: 50px; 
+              top: 50%; margin-top: -25px; }
+.icon1 { right: 130px; }
+.icon2 { right: 70px; }
+.icon3 { right: 10px; }
+    </style>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+     <div class="inner clear">
+        <h1 class="logo">LOGO</h1>  
+        <nav class="menu">
+          <ul>
+              <li>menu1</li>
+              <li>menu2</li>
+              <li>menu3</li>
+              <li>menu4</li>
+          </ul>  
+        </nav> 
+     </div>
+    </header>
+    <main class="clear">
+      <!-- section.box$*5>{box$} -->
+      <section class="box1">box1</section>  
+      <section class="box2">box2</section>  
+      <section class="box3">box3</section>  
+      <section class="box4">box4</section>  
+      <section class="box5">box5</section>  
+    </main>
+    <footer>
+      <div class="inner">
+        <p>copyright</p>  
+        <span class="icon1">S</span>
+        <span class="icon2">N</span>
+        <span class="icon3">S</span>
+      </div>
+    </footer>
+  </div>
+  <div class="quick">banner</div>  
+</body>
+</html>

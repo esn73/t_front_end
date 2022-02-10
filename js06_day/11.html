@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //A개발자
+        //(function(){}()); 즉시실행함수**
+    (function(){ 
+        var num=100;
+        
+        function menu(){
+            num +=100; //num=num+100=>200
+            document.write("A개발자 : " +num, "<br>") 
+        }
+            menu();
+    }());
+
+
+        //B개발자 - [B개발자:100]
+        (function(){
+            var num=10;
+            function menu(){
+            document.write("B개발자 : " +num,"<br>");
+        }
+        menu();
+    }());
+    </script>
+</body>
+</html>

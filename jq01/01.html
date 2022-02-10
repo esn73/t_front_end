@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 선택자</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    
+    $(document).ready(function(){ //현재 웹문서가 리딩이 끝나면 함수실행
+
+//jQuery .innerHTML=html
+$(".title2").html("안녕하세요2");
+// $(".title").css("color","red")
+$(".title2").css({
+"color":"red",
+"font-size":"52px"
+})
+
+$("ol li").css({
+"color":"orange", 
+fontSize:24
+});
+$("ol li:nth-child(2)").css("text-decoration","underline");
+$("ol li").click(function(){
+$(this).css("color","blue").siblings("li").css("color","orange")
+});
+//siblings this랑 같이 쓰면 나머지 형제/this는 ""를 안씀
+
+})
+
+    </script> 
+
+</head>
+
+<body>
+    <h1 class="title">자바스크립트</h1>
+    <h1 class="title2">제이쿼리</h1>
+    <ul>
+        <li>짜장면</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>라면</li>
+    </ul>
+    <ol>
+        <li>짜장면</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>라면</li>
+    </ol>
+    <script>
+        //1.안녕하세요->color :blue
+        let title=document.getElementsByClassName("title")[0]
+        document.getElementsByClassName("title")[0].innerHTML="안녕하세요";
+        title.style.color="blue";
+        title.style.fontSize="52px";
+
+        //2. orange->24px / 피자->언더라인 / 클릭한 li만->blue 변경->초기화코드
+        let menuList=document.querySelectorAll("ul>li")
+        for(let i=0; i<menuList.length; i++){
+        menuList[i].style.color="orange";
+        menuList[i].style.fontSize="24px";
+        }
+
+        menuList[1].style.textDecoration="underline";
+        for(let i=0; i<menuList.length; i++){
+        menuList[i].onclick=function(){
+            this.style.color="blue";
+            //초기화
+            for(let i=0; i<menuList.length; i++){
+                menuList[i].style.color="orange"
+            }
+            this.style.color="blue"
+        }
+    }
+ 
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input  type="text" id="age" placeholder="나이 입력해주세요"> -->
+    <input  type="text" id="height" placeholder="어린이 키를 입력해주세요">
+    <button onclick="ride()">확인</button>
+    <p id="result"></p>
+    <script>
+    
+    var test="1234"//전역변수(변수바깥) 화면이 로딩될때 저장
+    const standard=110
+    function ride(){
+        // alert("버튼클릭!");
+        var height=document.getElementById("height").value;
+        console.log(height)
+
+        if(height>=standard){
+            document.getElementById("result").innerHTML
+            =`어린이는 키가 ${height}cm이므로 탑승 가능합니다.`;
+        }else{
+            document.getElementById("result").innerHTML
+            =`어린이는 키가 ${height}cm이므로 탑승 불가능합니다.`;
+        }
+
+
+
+        }
+
+      
+    </script>
+</body>
+</html>

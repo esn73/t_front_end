@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 메서드</title>
+</head>
+<body>
+    <script>
+        var txt2=new String("javascript")
+        var txt="Hello Thank you good luck to you"
+
+        document.write(txt.charAt(16),"<br>");//g
+        document.write(txt.indexOf("you"),"<br>"); //12
+        document.write(txt.indexOf("you"),"<br>"); //29
+
+        document.write(txt.length,"<br>");32
+        document.write(txt.toUpperCase(),"<br>"); //문자열 대문자로 
+        document.write(txt.toLocaleLowerCase(),"<br>"); //문자열 소문자로
+
+        document.write(txt.match("luck","<br>")); //luck
+        document.write(txt.search("you"),"<br>"); //일치하는 문자열의 인덱스 번호 12
+
+        document.write(txt.substr(21, 4),"<br>");//substr(시작인덱스번호, 자를갯수) luck
+        document.write(txt.substring(6, 11),"<br>")//Thank
+        //substring(시작인덱스번호,끝인덱스번호) !!끝 인덱스번호 앞에서 잘림 끝번호는 포함X
+        document.write(txt.replace("you","me"),"<br>") //Hello Thank me good luck to you
+
+        var txt3=txt.split(" "); //split("")공백문자열을 기준으로 분리함->배열로 할당
+        document.write(txt3,"<br>");
+        console.log(txt3)
+        console.log(txt3[0]);//Hello
+
+        document.write(txt[0],"<br>"); //H
+        document.write(txt2.repeat(3),"<br>");//javascriptjavascriptjavascript
+
+        document.write(txt[0].charCodeAt());// charCodeAt(인덱스번호) 아스키코드값 H-72
+
+    </script>
+</body>
+</html>

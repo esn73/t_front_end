@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 전자시계</title>
+    <style>
+        #time{border: 2px solid #ccc ;pad: 30px;
+              text-align: center; width: 500px; margin: 0 auto;
+              background-color: #333; color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>자바스크립트 시계</h1>
+    <h2 id="time"></h2>
+    <script>
+        var show=document.getElementById("time");
+
+        function clock(){
+            var date=new Date();
+            console.log(date);
+
+            var clockMonth=date.getMonth()+1; //월
+            console.log(clockMonth); //9 **month는 무조건 0부터 시작해서 +1을 해줘야함
+
+            var clockDay=date.getDate(); //일자
+                clockDay=clockDay<10 ? "0"+clockDay:clockDay;
+            console.log(clockDay); //01
+
+            var week=["일","월","화","수","목","금","토"];
+
+            var clockweek=date.getDay();
+                clockweek=week[clockweek];
+            console.log(clockweek); // 5->금요일 일요일->0
+
+            var hours=date.getHours(); //시간
+                hours=hours<10? "0"+hours:hours;
+
+            var minutes=date.getMinutes(); //분
+                minutes=minutes<10?"0"+minutes:minutes
+
+            var seconds=date.getSeconds(); //초
+                seconds=seconds<10?"0"+seconds:seconds
+
+            console.log(hours, minutes, seconds);
+
+            //clockMonth+clockDay+clockweek+hours+minutes+seconds; 74
+            show.innerHTML=
+            `${clockMonth}월 ${clockDay}일 ${clockweek}요일 * `+
+            `${hours}:${minutes}:${seconds}`;
+
+            //clock():
+            setInterval(clock,1000);
+        }
+        clock();
+
+    </script>
+</body>
+</html>

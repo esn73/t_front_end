@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>사칙연산 계산기</title>
+</head>
+<body>
+    <input type="text" id="num1" size="2" value="1">
+    <input type="text" id="num2" size="2" value="2">
+
+    <hr>
+    <button onclick="add()"> + </button>
+    <button onclick="sub()"> - </button>
+    <button onclick="mul()"> * </button>
+    <button onclick="div()"> / </button>
+    <hr>
+    <input type="text" id="result">
+    
+    <script>
+        var text="전역변수 ";
+        //변수가 데이터를 입력하는 시점->화면이 로딩되는 시점에 등록
+        function add(){
+            var text2="지역변수 "; //{내부 선언된 변수는 내부에서만 호출 가능}
+            var num1=document.getElementById("num1").value; //value="1"
+            var num2=document.getElementById("num2").value; //value="2"
+            console.log(num1, num2);
+            console.log(typeof num1, typeof num2);
+
+            var total = Number(num1) + Number(num2);
+            console.log(typeof Number(num1), typeof Number(num2));
+            
+            document.getElementById("result").value = text2+total
+        }
+
+
+
+        function sub() {
+                        
+            var num1=document.getElementById("num1").value; 
+            var num2=document.getElementById("num2").value;
+
+            var total=num1-num2;
+            document.getElementById("result").value=total;
+        }
+        function mul() {
+                                    
+            var num1=document.getElementById("num1").value; 
+            var num2=document.getElementById("num2").value;
+            var total=num1*num2;
+            document.getElementById("result").value=total
+        }
+        function div(){
+
+            var num1=document.getElementById("num1").value; 
+            var num2=document.getElementById("num2").value;
+            var total=num1/num2;
+            document.getElementById("result").value=total
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

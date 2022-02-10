@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>숫자 두개중에 큰 수 출력</title>
+</head>
+<body>
+    <script>
+        var num1=prompt("첫번째 숫자를 입력해주세요","0")
+        var num2=prompt("두번째 숫자를 입력해주세요","0")
+
+        sum(num1, num2); //인수로 넘겨 주는 데이터가 변수로 가져오는 경우
+        
+        function sum(num1,num2){ //매개변수
+            if(num1>num2){
+                document.write(num1+"이 "+ num2 +"보다 큰수입니다.");
+            }else if(num1<num2){ //num2>num1
+                document.write(num2+"이 "+ num1 +"보다 큰수입니다.");
+            }else{
+                document.write(num1+"과 "+ num2 +"(은)는 같은 숫자 입니다.");
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 출력</title>
+    <script src="test.js"></script>
+    <script defer>
+    /*
+        여러줄 주석
+    */
+    </script>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <script>
+        // 한줄 주석처리
+        // 모든 문자열은 "문자는 따옴표 입력"
+        var 안녕하세요 = 123; // var는 변수선언
+        window.alert("<q>안녕하세요</q>"); //안녕하세요->변수 저장 공간으로 인식 *alert 경고창 출력(window생략가능)
+                                        // alert,console은 태그해석X
+
+        console.log("안녕하세요2");
+        
+        document.write('"안녕"하세요',"<br>"); // 쌍따옴표,소따옴표 바깥에쓴거 빼고 / br같은태그해석가능
+
+        console.log("<q>안녕하세요3</q>");
+        document.write('<q>안녕"하세요3</q>');
+
+        document.getElementById("title").innerHTML="안녕하세요";
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 기본 템플릿</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+    
+</head>
+<body>
+    <div id="app">
+     <my-com v-on:hi_vue="greeting" v-bind:prosdata="message"></my-com>
+    </div>
+    <script>
+        //Vue.component('컴포넌트 이름->커스텀 태그명으로 부착, {//컴포넌트 내용})
+        Vue.component("my-com", {
+            props: ['prosdata'], //데이터 연결자 
+            template: '<button v-on:click="hi"> {{prosdata}} </button>',
+            methode:{
+                hi: function(){
+                    this.$emit("hi Vue");
+                }
+            },
+        });
+        new Vue({
+            el: "#app" , //인스턴스 출력 지점
+            data: {
+                message: "Vue!!!",
+                test: 1234
+            }, //인스턴스 데이터 속성 -> 변수 총괄 
+            methode: { //이벤트, 화면 동작 메서드 -> 함수관리
+                greeting: function(){
+                    alert("Hi!");
+                }
+            }, 
+            // created: , //라이프 사이클 커스텀 로직
+        });
+    </script>
+    
+</body>
+</html>

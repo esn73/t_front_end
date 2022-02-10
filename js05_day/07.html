@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>브라우저 운영체제 정보 객체</title>
+    <style>
+        body{height: 2000px;}
+        
+    </style>
+</head>
+<body>
+    <!-- <img src="images/windows.png" alt=""> -->
+    <script>
+        var info=navigator.userAgent.toLowerCase();
+        var osImg=null;
+
+        if(info.indexOf('windows')>=0){
+            osImg="windows.png";
+        }else if(info.indexOf('macintosh')>=0){
+            osImg="macintosh.png";
+        }else if(info.indexOf('iphone')>=0){
+            osImg="iphone.png";
+        }else if(info.indexOf('android')>=0){
+            osImg="android.png";
+        }
+
+        document.write(`<img src='images/${osImg}'>`,"<br>");
+       
+
+        var scr_w =screen.width;
+        var scr_h =screen.height;
+
+        document.write("모니터 해상도 너비 :" + scr_w + "px","<br>");
+        document.write("모니터 해상도 높이 :" + scr_h + "px","<br>");
+
+        var w = window.outerWidth;
+        var h = window.outerHeight;
+
+        var w1 = window.innerWidth;
+        var h1 = window.innerHeight;
+        
+        console.log("브라우저 가로 :"+w+"px");
+        console.log("브라우저 세로 :"+h+"px");
+
+        console.log("작업화면 너비 :"+w1+"px");
+        console.log("작업화면 높이 :"+h1+"px");
+
+        var w2=window.pageXOffset;
+        var h2=window.pageYOffset;
+
+        console.log("문서 너비 :" + w2 +"px");
+        console.log("문서 높이 :" + h2 +"px");
+
+        var w3=document.body.scrollTop;
+        var h3=document.body.scrollLEft;
+
+        console.log("스크롤 상단 위치값:" + w3);
+        console.log("스크롤 상단 위치값:" + h3);
+
+
+
+    </script>
+</body>
+</html>

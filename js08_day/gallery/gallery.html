@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>라이트 박스 갤러리</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #imgbox{width: 800px; margin: 50px auto;}
+        .imglist{list-style: none;}
+        .imglist li{float: left; width: 32%; margin: 0.5%;
+                    border: 2px solid #fff; box-sizing: border-box;}
+        .imglist li img{width: 100%; display: block; filter: grayscale(1);}
+
+        .imglist li:hover{border-color: skyblue;}
+        .imglist li:hover img{filter: grayscale(0);}
+
+        #lightBox{position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    display: none;}
+        #lightBox img{border: 5px solid #fff; height: 500px;
+                    margin: 50px auto; display: block;}
+    </style>
+</head>
+<body>
+    <div id="imgbox">
+        <ul class="imglist">
+            <li><img src="images/iu-1-thumb.jpg" alt="0" data-src="images/iu-1.jpg"></li>
+            <li><img src="images/iu-2-thumb.jpg" alt="1" data-src="images/iu-2.jpg"></li>
+            <li><img src="images/iu-3-thumb.jpg" alt="2" data-src="images/iu-3.jpg"></li>
+            <li><img src="images/iu-4-thumb.jpg" alt="3" data-src="images/iu-4.jpg"></li>
+            <li><img src="images/iu-5-thumb.jpg" alt="4" data-src="images/iu-5.jpg"></li>
+            <li><img src="images/iu-6-thumb.jpg" alt="5" data-src="images/iu-6.jpg"></li>
+        </ul>
+    </div>
+    <div id="lightBox">
+        <img src="images/iu-1.jpg" alt="갤러리" id="lightBoxImg">
+    </div>
+
+    <script>
+        var thumb=document.querySelectorAll(".imglist>li>img");//배열
+        var lightBox=document.getElementById("lightBox");//팝업
+        var lightBoxImg=document.getElementById("lightBoxImg") //큰이미지
+
+        for(var i=0; i<thumb.length; i++){
+
+        thumb[i].onclick=function(){
+            //1.팝업 열기
+            lightBox.style.display="block";
+            //클릭한 위치의 data-src 정보 가져오기 // data-src="images/iu-2.jpg">
+            var dataSrc=this.getAttribute("data-src"); //images/iu-2.jpg
+            console.log(dataSrc);
+            //3.열린 팝업 안에 이미지 경로 바꾸기
+            lightBoxImg.setAttribute("src", dataSrc);
+                }
+            }
+            //4.열린 팝업 자신을 클릭하면 팝업 닫기
+            lightBoxImg.onclick=function(){
+                lightBox.style.display="none";
+            }
+        
+    </script>
+</body>
+</html>

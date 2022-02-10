@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>요소 추가2</title> 
+</head>
+<body>
+    <script>
+        var aTag=document.createElement("a");
+        console.log(aTag); //<a></a>
+        var textNode=document.createTextNode("주문완료 되었습니다.") 
+        console.log(textNode); //주문완료 되었습니다.   
+        var attr=document.createAttribute("href")
+        console.log(attr) //href=""
+        attr.value="https://www.naver.com/";
+        console.log(attr)
+
+        //1.조립 appendChild()
+        aTag.appendChild(textNode);
+        aTag.setAttributeNode(attr);
+
+        //2.부착 .appendChild()
+        document.body.appendChild(aTag);
+    </script>
+
+</body>
+</html>

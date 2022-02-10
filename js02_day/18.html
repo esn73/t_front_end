@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>중첩 if문</title>
+</head>
+<body>
+    <script>
+        var id="test";
+        var pw="1234";
+
+        var userId=prompt("아이디를 입력해주세요");
+        var userPw=prompt("비밀번호를 입력해주세요");
+
+        if(userId==id){
+
+            if(userPw==pw){
+                document.write(userId+"님 환영합니다.");
+            }else{
+                alert("비밀번호가 일치하지 않습니다.");
+                location.reload(); //페이지 새로고침
+            }
+
+        }else{
+            alert("아이디가 일치하지 않습니다.")
+            location.reload(); //페이지 새로고침
+        }
+    </script>
+</body>
+</html>

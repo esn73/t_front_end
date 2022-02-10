@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 기본 템플릿</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+    
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <button v-on:click="reverse">글자 거꾸로 출력</button>
+        <button v-on:click="check">확인</button>
+        <hr>
+        <button v-on:click="plus">{{num}} 클릭 </button>
+    </div>
+    <script>
+
+        new Vue({
+            el: "#app" , 
+            data:  {
+                message: "뷰 첫날 수업입니다.",
+                num:0,
+    
+            },
+            methods:{
+                reverse:function(){
+                   this.message= this.message.split("").reverse().join("")
+                //    return this.message;
+                },
+                check:function(){
+                    console.log("확인!")
+                },
+                plus:function(){
+                    // this.num=this.num+1;
+                    if(this.num==10){this.num=0;} //10이되면 리턴
+                    this.num++;
+                }
+            },
+        });
+    </script>
+    
+</body>
+</html>

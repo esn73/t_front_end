@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+        h1{color: blue; text-align: center;
+            font-family: Gamja Flower;
+            text-decoration: indianred;
+        }  
+        p{ font-size: 12px; color: skyblue !important;}
+        ul{ font-weight: bold; font-style: italic; color: yellowgreen;}
+        .txt1{color: teal; text-align: right; /* text-transform: uppercase;  일괄대문자*/
+                            text-transform: lowercase; /*일괄소문자*/
+                            text-transform: capitalize; /*첫글자만 대문자 */
+                            font-family: Gamja Flower;
+                        }
+        .txt2{
+            color: blue; 
+            font-weight: bold; 
+            font-size: 16px;
+            font-variant: small-caps; /* 모양은 대문자 크기는 소문자*/
+        }
+        #subtitle{ color: tomato;}
+         li{color: violet;}
+        ul li{color: red;}
+        body ul li{color: limegreen;}
+        body{font-family: 'Courier New', Courier, monospace;}
+        /* CSS 주석 선택자에 따른 우선 순위
+            선택자 위치값을 자세히 작성할 수록 순위가 올라감
+            선택자에 따른 우선 순위
+            0.!important
+            1. #아이디 선택자
+            2. .클래스 선택자
+            3. 태그이름 선택자        
+        */
+        /* 아이디이름은 한 화면에 한번만 작성한다. 똑같은 이름 중복사용 안됨
+        */
+    </style>
+</head>
+<body>
+        <!--CSS 입력하는 방식에 따른 우선순위
+            0. h1 { color: orange !important;} !important
+            1. Style="color: red;" 인라인작성
+            2. 상단 <head> -> <style> h1 { color: blue } </style>
+            3. 외부링크 ->
+        -->
+    <h1 style="color: red;">제목</h1>
+    <p class="txt1" id="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolore a voluptate corrupti nam ipsam, magni ipsum! Dolores eum, architecto deserunt illum culpa quibusdam aliquam. Amet repellendus beatae id culpa.</p>
+    <p class="txt2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum amet aspernatur voluptas? Sequi iusto, hic illum nobis soluta voluptate laboriosam suscipit cumque quibusdam et pariatur explicabo aut eius sint? Officia?</p>
+    <ul>
+        <li class="txt1">아이유</li>
+        <li style="text-decoration: line-through;"></l>방탄</li>
+        <li style="text-decoration: overline;">블핑</li>
+    </ul>
+</body>
+</html>

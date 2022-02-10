@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>id 선택자</title>
+
+</head>
+<body>
+    <h1 id="title">자바스크립트 선택자</h1>
+    <ul class="list">
+        <li class="item">Tag선택자 : 복수형태 배열</li>
+        <li class="item">Class선택자 : 복수</li>
+        <li class="item">ID 선택자: 단수</li>
+        <li class="item">querySelect : 단수</li>
+        <li class="item">querySelectAll : 복수</li>
+    </ul>
+
+    <hr>
+    <h2 id="menuList">점심 메뉴 리스트</h2>
+    <dl>
+        <dt class="menuTitle">오늘의 점심</dt>
+        <dd class="menu">짜장면</dd>
+        <dd class="menu">햄버거</dd>
+        <dd class="menu">떡볶이</dd>
+        <dd class="menu">피자</dd>
+    </dl>
+
+    <ol>
+        <li class="olist">오늘의 점심</li>
+        <li class="olist">짜장</li>
+        <li class="olist">햄버거</li>
+        <li class="olist">떡볶이</li>
+    </ol>
+    <script>
+        document.getElementById("title").style.textAlign="center";
+        document.getElementById("title").style.color="red";
+
+        // document.getElementsByClassName("item").style.color="blue"
+        console.log(document.getElementById("title"));
+        console.log(document.getElementsByClassName("item"));
+        //유사배열 HTMLCollection(5) [li.item, li.item, li.item, li.item, li.item]
+
+        var itemTag=document.getElementsByClassName("item");//우변데이터를 좌변에 할당
+
+        for(var i=0; i<itemTag.length; i++){
+            itemTag[i].style.color="blue";
+        }
+
+        var menuList=document.getElementById("menuList");
+        
+        menuList.style.width="500px";    
+        menuList.style.textAlign="right";
+        menuList.style.border="2px solid orange"
+
+
+        var dtTag=document.getElementsByTagName("dt") //[dt]
+
+        dtTag[0].style.fontSize="54px";
+        dtTag[0].style.backgroundColor="green";
+        dtTag[0].style.color="#fff";
+
+        var menu=document.getElementsByClassName("menu"); //배열[]
+        
+        for(var i=0; i<menu.length; i++) {
+            menu[i].style.color="orange";
+            menu[i].style.letterSpacing="50px";
+        }
+
+        var oList=document.querySelector(".olist");// querySelector(css선택자)단수
+        oList.style.color="red"; //같은 조건이 여러개 나오면 가장 처음에 있는 한개만 선택 1.오늘의점심 폰트컬러만 레드
+
+        var oList2=document.querySelectorAll("ol li");
+        // oList2.style.backgroundColor="skyblue";
+        for(var i=0; i<oList2.length; i++){
+
+            oList2[i].style.color="skyblue";
+        }
+    </script>
+</body>
+</html>

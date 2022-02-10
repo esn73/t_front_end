@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 기본 템플릿</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+    
+</head>
+<body>
+    <div id="app">
+
+        <my-com v-bind:propsdata="message"></my-com>
+    </div>
+    <script>
+        Vue.component("my-com", {
+            props:['propsdata'],//데이터 연결자
+            template:"<p>{{propsdata}}</p>"
+        })
+        new Vue({
+            el: "#app" , 
+            data:  {
+                message:"안녕하세요",
+                test:1234
+            }
+        });
+    </script>
+    
+</body>
+</html>

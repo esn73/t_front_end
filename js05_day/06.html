@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location</title>
+</head>
+<body>
+    <button onclick="history.back(3)">뒤로가기</button>
+    <script>
+        var url=location.href; //현재 페이지 url 정보
+        //http://127.0.0.1:5500/06.html 
+        console.log(url);
+
+        // location.reload()// 새로고침
+        var text=history.length;//방문기록 몇개 저장되어있는지
+        console.log(text);
+
+    </script>
+</body>
+</html>

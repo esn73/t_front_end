@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>137p 매개변수 -> 인수 값 입력->매개변수가 없는 경우</title>
+</head>
+<body>
+    <script>
+        //sum 더하기 연산 함수
+        function sum(){ // 매개변수는 작성안해도 기본값 매개변수 값->배열
+
+            var sum=arguments[0]+arguments[1]+arguments[2];
+            console.log(arguments);
+            return sum;
+        }
+        
+        var result = sum(10, 20, 30); //인수
+        document.write(result,"<br>");
+
+        var result2 = sum2(10, 20, 30, 40, 50);
+
+
+        function sum2(){ //agruments->1,2,3,4,5
+        var txt="";
+            for(var i=0; i<arguments.length;i++){
+                // document.write(i + "-"  +arguments[0]+"<br>");
+                txt += i + "-"  + arguments[0] + "<br>";
+            }
+            return txt;
+        }
+        document.write(result2);
+    </script>
+</body>
+</html>

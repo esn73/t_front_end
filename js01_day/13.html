@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>논리연산52p</title>
+</head>
+<body>
+    <p id="test"></p>
+    <script >
+        var x=3;
+        var y="3";
+
+        document.getElementById("test").innerHTML
+        // =(x==y)+"<br>"+(x===y)
+        //== 모양만 비교함 // === ->데이터타입까지 같아야 true
+        =(x!=y)+"<br>"+(x!==y)
+
+        
+
+        
+ /*       document.getElementById("test").innerHTML
+        = !(x == y); */
+
+    // x>10-false 
+    // x>10-false
+    // x>y-true
+    //   = x > 10 && y>1 ; > 1
+    //   = x > 10 && y>1 ;
+
+    //[&&] and 논리곱:양족이 다 참일경우만 참
+    //[||]or 논리합:한쪽만 참일 경우 ->참     //x>10||y>1->true
+
+    //[^] XOR 연산자는 서로 값이 다를 때 참 1/ 서로 값이 같다면 거짓 0
+    //[!]Not 연산자 **연산자 !true; -> false !false->true 반대로 출력
+    </script>
+</body>
+</html>

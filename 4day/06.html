@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{width: 750px; margin: 0 auto; border: 1px solid red ;}
+       
+        header{background-color: skyblue; padding: 10px 0;}
+        header h1{text-align: center;}
+        header nav{}
+        header nav ul{padding: 0; text-align: center;}
+        header nav ul li {display: inline-block; border: 1px solid blue;
+                        padding: 8px 20px;}
+        
+        header nav ul li:hover{background-color: blue; color: #ffff;
+        cursor: pointer;}
+
+        .clrear::after{content:""; display: block; clear: both;}
+        main{background-color: orange; margin: 10px 0;}
+        main section{width: 250px; box-sizing: border-box; border: 1px solid red;
+                    height: 200px; float: left;
+        }
+        
+
+        footer{background-color: #ccc; padding:10px 0; text-align: center;}
+        .quick{width: 100px;height:200px ; background-color: red;
+                position: fixed; top: 180px; left: 50%;
+                margin-left: 390px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>LOGO</h1>
+            <!-- li*4>{menu0$} -->
+        <nav>
+            <ul>
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+            <li>menu04</li>
+            </ul>
+        </nav>
+        </header>
+        <main class="clear">
+            <section>본문1</section>
+            <section>본문1</section>
+            <section>본문1</section>
+        </main>
+        <footer>
+            <p>copyright</p>
+        </footer>
+
+        </div>
+    </div>
+    <div class="quick">banner</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>애니메이션 메서드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        #box{width: 300px; height: 100px; border: 5px solid red;
+        background-color: yellow; padding: 20px;
+        margin: 50px 20px;}
+    </style>
+</head>
+<body>
+    <div id="box">box</div>
+    <button>slideUP</button>
+    <button>slideDown</button> 
+    <button>slideToggle</button>
+    <script>
+        $("button:nth-of-type(1)").click(function(){
+            $("#box").slideUp();
+        });
+        $("button:nth-of-type(2)").click(function(){ //body의 자식
+            $("#box").slideDown(); //0.5초
+        });
+        $("button:nth-of-type(3)").click(function(){ 
+            $("#box").slideToggle();
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 에니메이션</title>
+        <style>
+            *{margin: 0; padding: 0;}
+            a{text-decoration: none; color: #fff;}
+            nav{width: 800px; margin: 100px auto; border: 1px solid skyblue;}
+            .main_menu{ list-style: none; height: 40px;}
+            .main_menu>li{float: left; width: 25%; text-align: center; background-color: cadetblue;
+            position: relative; height: 100%; line-height: 40px;
+                            font-size: 18px; transition: 5s;
+        }
+            .main_menu>li:hover{background-color: rgb(77, 134, 146);}
+            .main_menu>li:hover .sub_menu{display: block; height: 200px;
+            }
+
+            .sub_menu{list-style: none;position: absolute; width: 100%; display: block;
+                     transition: 1s; height: 0px; overflow: hidden;
+            }
+            .sub_menu>li{background-color: gray; font-size: 14px;}
+            .sub_menu>li:hover{background-color: rgb(163, 163, 163);}
+            .sub_menu>li>a{}
+
+            .imgbox{width: 300px; margin: 50px auto; height: 200px; overflow: hidden;
+                    border: 2px solid skyblue; position: relative; transition: .5s;
+            }
+            .imgbox img{width: 100%; transition: 1s;}
+            .imgbox span{position: absolute; background-color: slateblue; color: #fff;
+                        padding: 10px 20px; left: 50%; top: 250px ; transform: translate(-50%,-50%);
+                        transition: .5s; opacity: 0;
+                    }
+            .imgbox:hover img{transform: scale(1.2);}
+            .imgbox:hover span{top: 50%; opacity: 1; border-radius: 50%;}
+            .imgbox:hover{border: 2px solid deeppink;}
+
+
+        </style>
+</head>
+<body>
+    <nav>
+        <ul class="main_menu">
+            <li><a href="#">menu1</a>
+                <!-- ul.sub_menu>li*5>a[href="#"]>{sub$} -->
+                <ul class="sub_menu">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                    <li><a href="#">sub5</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu2</a>
+                <ul class="sub_menu">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                    <li><a href="#">sub5</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu3</a>
+                <ul class="sub_menu">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                    <li><a href="#">sub5</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu4</a>
+                <ul class="sub_menu">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                    <li><a href="#">sub5</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="imgbox">
+        <img src="../ba.jpg" alt=""><span>viwe</span>
+
+    </div>
+</body>
+</html>

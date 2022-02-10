@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>용돈 계산 프로그램 p.58</title>
+</head>
+<body>
+<!-- 
+        day 기준 용돈은 10,000원
+        지출 내역 총합 - 교통비, 식비, 기타 총합
+        total: 용돈>지출내역 총합
+     -->
+
+    용돈 총액:<input type="" name="" id="day" value="10000" placeholder="오늘의 용돈을 입력해주세요">
+    <hr>
+    식비: <input type="text" id="pr1"><br>
+    교통비: <input type="text" id="pr2"><br>
+    기타: <input type="text" id="pr3"><br>
+    <hr>
+    <button onclick="result()">용돈 계산하기</button>
+    <p id="output"></p>
+    
+     <script>
+         function result(){
+         const day=document.getElementById("day").value;
+         var pr1=document.getElementById("pr1").value; //식비 
+         var pr2=document.getElementById("pr2").value; //교통비
+         var pr3=document.getElementById("pr3").value; //기타
+         var total=Number(pr1)+Number(pr2)+Number(pr3); //지출내역 총합
+            console.log(total, typeof total);//
+
+         var result=day>total?
+         (day-total)+"원 남았으니 용돈 관리를 잘했습니다." : (total-day)+"원 초과되었으니 용돈관리를 잘 못했습니다.";
+
+        //  document.write(result);
+        
+        document.getElementById("output").innerHTML=result;
+
+        }
+     </script>
+</body>
+</html>

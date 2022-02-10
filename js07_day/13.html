@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>화면 조작</title>
+</head>
+<body>
+    <h1 id="title">DOM 선택자</h1>
+    <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Rerum molestias voluptatum nesciunt animi quaerat obcaecati illum vitae, mollitia, 
+        enim unde velit temporibus quasi perferendis reiciendis deserunt voluptatem deleniti q
+        uidem sit.</p>
+        <ul class="fru">
+            <li class="item">바나나</li> 
+            <li class="item">사과</li>
+            <li class="item">딸기</li>
+            <li class="item">자두</li>
+            <li class="item">포도</li>
+            <li class="item">복숭아</li>
+            <li class="item">메론</li>
+        </ul>
+        <p>문단입니다.</p> <!--문단입니다. 과일은 총 7개-->
+        <hr>
+        <button onclick="test1()">배경</button><!--.text 배경칼라:orange-->
+        <button onclick="test2()">변경</button> <!--바나나--파인애플/노랑 -->
+        <button onclick="test3()">과일 갯수 출력</button> <!--문단입니다. 과일은 총 7개-->
+        <button onclick="test4()">문단 삭제</button><!--.text삭제-->
+        <button onclick="test5()">문단 출력</button><!--.text출력-->
+    <script>
+
+        var text=document.getElementsByClassName("text"); // 유사배열[]
+        var title=document.getElementById("title")
+        var list=document.querySelectorAll(".fru li") //유사배열[]
+        var tagP=document.getElementsByTagName("p");
+        console.log(list);
+
+        function test1(){   
+            text[0].style.backgroundColor="orange";
+            title.style.backgroundColor="red";
+            title.style.textAlign="center";
+            title.innerHTML="Style 속성 변경"; //문구 변경
+        }
+
+
+        function test2(){
+            for(var i=0; i<list.length; i++){ //i in 배열명(list)->유사배열
+            list[i].style.backgroundColor="yellow";
+            }
+            list[0].innerHTML="파인애플";
+        }
+
+        function test3(){
+
+            tagP[1].style.backgroundColor="yellow";
+            tagP[1].innerHTML="과일은 총"+list.length+"개 입니다.";            
+
+        }
+        function test4(){
+            text[0].style.display="none";
+        }
+
+        function test5(){
+            text[0].style.display="block";
+        }
+    </script>
+</body>
+</html>

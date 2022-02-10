@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // document.createElement("button")
+        var btnTag=document.createElement("button");
+        console.log(btnTag); //button
+        var textNode=document.createTextNode("click");
+        console.log(textNode);//"click"
+        //조립
+        btnTag.appendChild(textNode);
+        console.log(btnTag);
+        //화면에 부착
+        document.body.appendChild(btnTag);
+    </script>
+</body>
+</html>

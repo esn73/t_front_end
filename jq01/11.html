@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{background-color: skyblue; width: 100px; height: 100px;
+                margin: 10px auto; transition: transform 1s ease;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let rotate=0;
+            //.fiter->선택자 자체를 필터링
+            $("button").filter(".play").click(function(){
+                rotate +=360;
+                console.log(rotate);
+                $("#box").css({                    
+                    transform: "rotate("+rotate+"deg)"
+                });
+            });
+            //.find()->선택자 내부를 검색
+            $("button").find("span").click(function(){
+                let text = $("#box").text();
+                console.log(text);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="box">box</div>
+    <button class="play">play</button> <!--#box 돌아가는 애니-->
+    <button><span>info</span></button> <!--정보출력-->
+</body>
+</html>

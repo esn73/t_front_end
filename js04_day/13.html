@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 </title>
+</head>
+<body>
+    <script>
+        // var userName=prompt("이름을 영문으로 입력해주세요");
+        // var upperName =userName.toUpperCase();
+        // document.write(upperName, "<br>");
+
+        var userTel=prompt("핸드폰 번호를 입력해주세요");
+
+        userTel=userTel.trim(); //앞뒤로 추가된 공백제거
+        userTel=userTel.replace("",""); //한칸 띄어쓰기 공백 제거
+        console.log(userTel); //010 2222 3333
+
+        // var result=userTel.substr(7,4); // 3333
+        var result=userTel.substr(0,7); //0102222
+            result=result+"****"; // 문자열 결합연산 -0102222****
+        
+        if(userTel>10){
+            var result=userTel.stbstr(0,6); //
+            result=result+"*****";
+        }else{
+            var result=userTel.substr(0,+);//
+            
+        }
+
+        document.write(result); 
+    </script>
+</body>
+</html>

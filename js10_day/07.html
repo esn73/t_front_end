@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>점심 메뉴 리스트 만들기</title>
+    <style>
+        .red{color: crimson; line-height: 1.8; font-size: 18px;cursor: pointer;}
+        .menulist{width: 300px;}
+        .menulist li span{float: right;}
+    </style>
+</head>
+<body>
+    <h1>점심 메뉴 리스트</h1>
+    <input type="text" placeholder="점심메뉴를 등록해주세요" id="menu">
+    <button class="btn">메뉴등록</button>
+    <hr>
+    <ul class="menulist"></ul>
+    <script>
+        let btn=document.querySelector(".btn") //등록메뉴
+        let menu=document.getElementById("menu") //메뉴텍스트 인풋박스
+        let menulist=document.querySelector(".menulist") //메뉴리스트 부착지점
+        let menuData=[];
+
+
+        btn.addEventListener("click", function(){
+            menuData.push(menu.value);
+            console.log(menuData);
+            let list="";
+
+
+            //배열->리스트출력
+            //<li> menuData[0]</li>
+            for(var i=0; i<menuData.length; i++){
+                list+= "<li>"+menuData[i]+"<span data-src='"+i+"'> x 메뉴삭제</span>"+"</li>";
+            }
+            menulist.innerHTML=list;
+            let liTag=document.querySelectorAll(".menulist li span")
+
+            for(let i=0; i<liTag.length; i++){
+            liTag[0].addEventListener("click",function(){
+                var index=this.getAttribute("data-src")
+                console.log(index);
+                menuData.splice(index,1);
+            });
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

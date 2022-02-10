@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>박스이동</title>
+    <style>
+        .box{width: 100px; height: 100px; background-color: skyblue;
+            position: absolute; left: 0; top: 0; 
+            animation-name: move 5s ease infinite;
+            }
+        @keyframes move{
+            0%{left: 0px; top: 0;}
+            25%{left: 500px; top: 0;}
+            50%{left: 500px; top: 500px;}
+            75%{left: 0; top: 500px;}
+            100%{left: 0; top: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(function(){    
+        $("#newsWrap h2 a").on("click", function(e){
+            e.preventDefault();
+            $(this).addClass("on").parent("h2").siblings("h2").children("a").removeClass("on");
+
+            $.ajax({
+                // 1 클릭한 a태그가 가지고 있는 XML데이터 연결할 주소를 가져온다.
+                url: 'https://api.rss2json.com/v1/api.json', //클라이언트 http 요청보낼 서버의 url주소
+                dataType: "json",
+                data: { //url로 전송할 데이터 ->xml->json
+                    
+                    rss_url: $(this).attr("href"), //https://rss.blog.naver.com/zjvl851.xml
+                    count:10, //전송받을 json타입 데이터 갯수
+                },
+                    success:function(data){
+                    console.log(data);
+
+                        let= $newsBox=$("<ul class='newsList'>");
+                        $(".newsList").empty();// ** $(선택자).empty() ->선택자의 내부만 비우기
+                        $.each(data.items, function(index, value){
+                            let newsList = $("<li><span></span><a href='#'></a></li>")
+                            // newsList.find("a").attr("href",value.link);
+                            // newsList.find("a").attr("href",value.link);
+                            newsList.find("a").attr({
+                                "href":value.link,
+                                "target": "_blank"
+                             });
+
+                            newsList.find("a").html(value.title);
+                            newsList.find("span").text(index+1);
+                            $newsBox.append(newsList);
+
+                        });
+                        $("#newsWrap").append($newsBox)
+                    },
+                    error:function(){
+                        alert("데이터 전송이 실패했습니다.")
+                    }
+            });
+        });
+    });
+</script>
+<style>
+    /* 기본 세팅 */
+    *{
+        margin:0;
+        padding:0;
+    }
+    li{
+        list-style:none;
+    }
+    body{
+        font:12px Malgun Gothic,"맑은고딕",gulim,"굴림",sans-serif;
+        color:#333;
+        padding-top:20px;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-size:100%;
+        font-weight:normal;
+    }
+    a{
+        color:#333;
+        text-decoration:none;
+        outline:none;
+    }
+    h1{
+        font-size:2em;
+        text-align:center;
+        margin-bottom:10px;
+        color:;
+    }
+    
+    /* 탭 메뉴 디자인 */
+    #newsWrap{
+        width:500px;
+        margin:0 auto;
+    }
+    #newsWrap li{
+        line-height:2;
+        position:relative;
+    }
+    #newsWrap span{
+        position:absolute;
+        top:0;
+        left: 3px;
+    }
+    #newsWrap li a{
+        display:block;
+        width:400px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        padding-left:30px;
+    }
+    #newsWrap h2{
+        float:left;
+        padding-right:3px;
+        margin-bottom:10px;
+    }
+    #newsList{
+        clear:both;
+    }
+    
+    /* 비활성화 탭 버튼 모양 */
+    #newsWrap h2 a{
+        display:inline-block;
+        padding:8px 10px;
+        border:1px solid #aaa;
+        border-bottom:none;
+        border-radius:5px 5px 0 0;
+        background:#ccc;
+    }
+    
+    /* 활성화 탭 버튼 모양 */
+    #newsWrap h2 a.on{
+        background-color:#fff;
+        font-weight:bold;
+    }
+</style>
+</head>
+ 
+<body>
+    <h1>블로그 RSS</h1>
+    <div id="newsWrap">
+        <h2><!-- 초기에 첫 번째 버튼에만 class="on"이 포함되어 있다. -->
+            <a href="https://rss.blog.naver.com/zjvl851.xml" class="on">영화정보</a>
+        </h2>
+        <h2>
+            <a href="https://rss.blog.naver.com/shshat9191.xml">음악감상</a>
+        </h2>
+        <h2>
+            <a href="http://fs.jtbc.joins.com/RSS/culture.xml">jtbc뉴스</a>
+        </h2>
+        <br><br><br>
+       <!-- <ul id="newsList"></ul>-->
+    </div>
+</body>
+</html>

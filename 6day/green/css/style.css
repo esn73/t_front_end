@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+/* reset */
+/* *{margin: 0; padding: 0;} */
+body, h1, h2, h3, p, ul, li, ol{margin: 0; padding: 0;}
+a{text-decoration: none; color: #333;}
+ul, li {list-style: none;}
+.clear::after{content:"";display: block;clear: both;}
+/* 위에까지 다 reset 작업 */
+
+/* div, section, header, footer{border: 1px solid red;} */
+/* 작업끝나고 지우기 */
+
+#wrap{width: 1200px; margin: 0 auto;}
+/* 너비를 부모박스로 잡음 header,slide,content,footer 따로 작업x */
+header{height: 100px;}
+header .logo{float: left; padding-top: 30px}
+header nav{float: right;}
+
+.main_menu {margin-top: 40px;}
+.main_menu>li{float: left; width: 200px; text-align: center; height: 40px; 
+                line-height: 40px; position: relative; background-color: #3cb149;}
+.main_menu>li>a{font-weight: bold;  color: #fff;}
+/* 자손선택자 1탭스 대메뉴만만 선택 .main_menu>li */
+.main_menu>li:hover{background-color: #1d8844;}
+.main_menu>li:hover .sub_menu{display: block;}
+
+.sub_menu{position: absolute;top: 40px; left: 0; width: 100%; display: none; z-index: 10;}
+.sub_menu li{background-color: #434748;}
+.sub_menu li:hover{background-color: #5c6061;}
+.sub_menu li a{color: #fff;}
+
+/* >사용법 중요**** */
+
+
+#slider{height: 300px;position: relative;overflow: hidden;}
+
+/* left:0px, left:-1200px; -2400px */
+.slide{width: 3600px;left: -2400px; top: 0; position: absolute; 
+        animation: move 8s ease infinite;
+}
+        
+   /* animation-name: move;
+        animation-duration: 8s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite; */
+
+.slide li{float: left; width: 1200px; height: 300px; }
+.slide li img{width: 100%;}
+
+
+@keyframes move {
+        0%{left: 0px;}
+        33.3%{left: -1200px;}
+        66.3%{left:-2400px;} 
+        100%{left:-0;}     
+}
+
+#content{height: 200px;}
+section{float: left; width: 390px; margin-right: 14px; box-sizing: border-box; margin-top: 10px;
+        height: 180px; 
+}
+section .title{background-color: #1d8844 ; color: #fff; width: 140px;height: 40px;
+                line-height: 40px; font-size: 18px; font-weight: normal;text-align: center;
+}
+.notice{}
+.notice .list{border-top: 2px solid #1d8844}
+.notice .list li {line-height: 1.9; font-size: 14px;}
+.notice .lis li:nth-child(2n){background-color: #eee;}
+.notice .list li span{float: right;}
+
+
+.gallery{}
+.gallery .list{border-top: 2px solid #1d8844; padding-top: 10px;}
+.gallery .list li{display: inline-block;}
+.gallery .list li img{margin-left: 10px; margin-top: 9px;}
+
+.banner{margin-right: 0;}
+.banner a {display: block; border-top: 2px solid #1d8844;}
+.banner a img{margin: 18px 14px;}
+
+
+footer{height: 100px; border-top: 2px solid #1d8844;}
+.btm_logo{float: left; margin-top: 30px;} /* 200px 40px*/
+.copy{float: left; width: 800px; text-align: center;
+        line-height: 90px; color: #555;}
+.copy strong{color: #1d8844;}
+#site{float: right; padding: 10px; border: 1px solid #ccc; width: 200px;
+    margin-top: 25px;
+}
+
+#popupbg{position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+        background-color: rgba(0,0,0,0.5); display: none;
+}
+.modal{background-color: #fff ; width: 400px; padding: 30px; margin: 100px auto;}
+.pop_title{color: #1d8844; border-bottom: 2px solid #1d8844; padding-bottom: 10px; }
+.pop_con{line-height: 2; margin-top: 20px; color: #555;}
+.close{margin-top: 50px; background-color: #1d8844; color: #fff; border: none;
+    border: none; padding: 10px 20px; border-radius: 5px;
+}
+.close:hover{background-color: #3cb149  ;}

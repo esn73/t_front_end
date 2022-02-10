@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        var car=["미니쿠퍼","지프","벤츠","포르쉐","볼보"];
+        document.write(car[0], car.length, car, "<br>");
+
+        var list="";
+        list +="<ol>"
+        car.forEach(list); //배열 데이터에 각각 실행
+
+        list +="</ol>";
+        // for(var i=0; i<car.length; i++){ 세가지 방법 
+        // // for(i in car){
+        //     list += "<li>"+car[i]+"</li>"
+        // }
+      
+        function carlist(value, index){ //(a,b로 적어도됌)
+            list += "<li>"+ value +"["+ index + "]"+ "</li>");
+        }
+        
+        document.write(list);
+
+
+    </script>
+
+</body>
+</html>

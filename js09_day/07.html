@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .imgbox{width: 350px; height: 200px; margin: 100px auto 20px; overflow: hidden;
+                border: 2px solid skyblue; position: relative;}
+        .imgbox img{width: 100%; display: block;}
+
+        .imglist{list-style: none; margin: 0; padding: 0; width: 2100px;
+                 position: absolute; left: 0px; top: 0; transition: 1s;}
+        .imglist::after{content: ""; display: block; clear: both;}
+        .imglist li{width: 350px; float: left;}
+
+        .copy{text-align: center;}
+        .copy span{color: red; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <!--이미지 클릭할때마다 다음이미지로넘기기-->
+    <div class="imgbox">
+        <ul class="imglist">
+            <li><img src="images/n1.jpg" alt="1"></li>
+            <li><img src="images/n2.jpg" alt="2"></li>
+            <li><img src="images/n3.jpg" alt="3"></li>
+            <li><img src="images/n4.jpg" alt="4"></li>
+            <li><img src="images/n5.jpg" alt="5"></li>
+            <li><img src="images/n1.jpg" alt="1"></li>
+        </ul>
+    </div>
+    <p class="copy"><span>1</span>번째 이미지</p>
+
+    <script>
+        var imglist=document.querySelector(".imglist");
+        var num=0;
+
+        setInterval(function(){
+
+            num++;
+
+            if(num > 5){
+                imglist.style.transition="none";
+                imglist.style.left="0px";
+                num=0;
+
+            }else{
+                imglist.style.transition="left 1s ease";
+                imglist.style.left= num * -350 + "px";
+
+
+            }
+
+        }, 2000);
+
+    </script>
+</body>
+</html>

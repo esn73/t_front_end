@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>전역 변수, 지역 변수</title>
+</head>
+<body>
+    <script>
+        var num=10; //전역 변수
+
+        function myNum(){
+            var num=50;
+            console.log("지역변수 num :"+num); //50
+
+        }
+        myNum();
+        console.log("전역변수 num :"+num); //10
+
+    </script>
+</body>
+</html>

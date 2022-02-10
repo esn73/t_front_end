@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>갤러리</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #gallery{width: 350px; overflow: hidden;
+        margin: 100px auto; border: 3px solid #ccc;
+        text-align: center;    }
+        #gallery img{width: 100%; display: block;
+        box-sizing:border-box}
+        #gallery button{ padding: 10px 20px; margin-top: 30px;
+        background-color: brown; color: #ccc; border: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="gallery">
+        <p><img src="images/n1.jpg" alt="" id="photo"></p>
+    </div>
+    <script>
+        
+        var num=1; //n1.jpg, n2.jpg ...n5.jpg
+        var img=document.getElementById("photo");
+
+        //타이머함수 이용해서 1초간격으로 이미지 넘기기
+     
+        setInterval(gallery,2000); // setInterval(함수이름, 간격시간); 2초
+        function gallery(){
+            if(num>=5){num=0;}
+            num++; console.log(num);
+            img.setAttribute("src",`images/n${num}.jpg`);
+        }
+
+    </script>
+</body>
+</html>

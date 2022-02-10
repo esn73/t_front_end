@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>56p 삼항연상 몸무게 구하기</title>
+</head>
+<body>
+    <script>
+        //평균체중=(신장-100)x0.9
+        var userHeight=prompt("당신의 키를 입력해주세요"); //신장 키
+        var userWeight=prompt("당신의 몸무게를 입력해주세요"); //신장 키
+        var usserWeight=74; //체중
+        var nomal=(userHeight-100)*0.9; //72kg 67~77
+        document.write("키가"+ userHeight +"인 경우 평균체중은" + nomal + "kg 입니다.","<br>")
+
+        var result=  userHeight>=nomal-5 && userWeight<=nomal+5;    //정상 범위=74<=77&&74>=67; 67< 정상몸무게<77
+            result=result ?  "정상 몸무게 입니다.":"정상 몸무게가 아닙니다."
+      
+        
+        document.write(`당신은 몸무게가 ${userWeight}kg 이므로 ${result}`);
+    </script>
+</body>
+</html>

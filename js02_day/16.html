@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>else if 조건이 여러개</title>
+</head>
+<body>
+    <script>
+    var mon=prompt("현재 몇월입니까", "0");
+
+    if(mon>=9&&mon<=11){ //가을 9~11
+        document.write("지금은 "+mon+"월 이니 가을은 독서의 계절입니다.");
+    }else if(mon>=6&&mon<=8){ //여름
+        document.write("지금은 "+mon+"월 이니 여름 휴가 철입니다.");
+    }else if(mon>=3&&mon<=5){ //봄 3~5
+        document.write("지금은 "+mon+"월 이니 햇살이 좋은 봄날입니다.");
+    }else{ //겨울
+        document.write("지금은 "+mon+"월 이니 스키의 계절입니다.");
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>점심메뉴 랜덤 출력</title>
+</head>
+<body>
+    <script>
+        var menu=["라면","떡볶이","피자","치킨","냉면"];
+        var rdm=Math.random();
+            rdm=Math.floor(rdm*5);
+            console.log(rdm);
+
+        //document.write(menu[4]);
+        document.write(`오늘의 추천 메뉴는 ${menu[rdm]}입니다.`);
+    </script>
+</body>
+</html>

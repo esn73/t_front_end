@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>skew:각도 마름모꼴 기울기</title>
+    <style>
+        #origin{border: 1px solid #555; float: left;
+                margin: 30px;}
+        #origin>div{width: 350px; height: 200px; overflow: hidden;
+                    transition-property: transform; /* css 속성이람 */
+                    transition-duration: .5s; /* 중간단계 랜더링 시간 */
+                    transition-timing-function: ease; /* 가속도 */
+                    transition-delay: 0s; /* 애니메이션 지연시간*/    }
+        #origin>div>img{width: 100%;}
+
+        .skew:hover{transform: skew(35deg, 35deg);}
+        .skewX:hover{transform: skewX(-45deg);}
+        .skewY:hover{transform: skewY(-45deg);}
+    </style>
+</head>
+<body>
+    <div id="origin">
+        <div class="skew">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="skewX">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="skewY">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+</body>
+</html>

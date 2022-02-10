@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "돋움";
+            font-size: 12px;
+            color: #000;
+            text-align: center;
+        }
+        a {
+            color: #999;
+            text-decoration: none;
+            display: block;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: color 0.5s ease;
+        }
+        a.on{
+            color: #ff6600;
+            font-weight: bold;
+        }
+        li {
+            list-style: none;
+        }
+        #gnb {
+            display: inline-block;
+            position: relative;
+        }
+        #gnb ul li {
+            float: left;
+            height: 40px;
+            width:150px;
+            line-height: 40px;            
+        }
+        #gnb span {
+            display: block;
+            border-bottom: 2px solid #ff6600;
+            height: 40px;
+            width: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#gnb").append("<span></span>");
+            $("#gnb>ul>li").on("mouseenter", function(){
+                let idx=$(this)
+                $("#gnb span").stop().animate({left: idx*150}, "fast");
+
+                // $(this).children("a").addClass("on").parent("li").children("a").removeClass("on");
+                $(this).children("a").addClass("on")
+                $(this).siblings("li").children("a").removeClass("on")
+            });
+            // $("#gnb>ul>li:eq(0)").mouseenter();
+            $("#gnb>ul>li:eq(0)").trigger("mouseenter");
+        });
+    </script>
+</head>
+<body>
+    <nav id="gnb">
+        <ul>
+            <li><a href="#">HTML</a></li>       <!-- left: 0px -->
+            <li><a href="#">CSS</a></li>        <!-- left: 150px -->
+            <li><a href="#">Javascript</a></li> <!-- left: 300px -->
+            <li><a href="#">jQuery</a></li>     <!-- left: 450px -->
+        </ul>
+        <!-- <span></span> -->
+    </nav>
+</body>
+</html>

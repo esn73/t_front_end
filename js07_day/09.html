@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>n! 팩토리얼 계산기 만들기</title>
+</head>
+<body>
+    <script>
+        var num=prompt("팩토리얼 계산할 숫자를 입력해주세요!"); //5!=1x2x3x4x5x=120
+        var nFact=1;
+        
+        
+        for(var i=1; i<=num; i++){
+            nFact *=i;
+            console.log(nFact+"x"+i+"="+(nFact*1));
+        }
+        document.write(num+"! = " +nFact); //5!
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>타이틀 텍스트 변경</title>
+    <style>
+        #title{text-align: center;}
+        .box{width: 200px; height: 200px; background-color: yellow;
+            margin: 50px auto; transition: 5s;}
+    </style>
+</head>
+<body>
+    <h1 id="title">타이틀 텍스트 변경</h1><!--노란색 사각형-->
+    <div class="box"></div><!--red/50% -> yellow . 0% -->
+    <script>
+        var title=document.getElementById("title");
+        // var box=document.getElementsByClassName("box"); //var box=[div.box]
+        var box=document.querySelector(".box");
+        var flag=true;
+
+        title.onclick=function(){   
+            this.innerHTML="노랑색 사각형"
+            flag=false;
+        }else{}
+        }
+
+        title.onclick=function(){   
+            if(flag){
+                this.style.backgroundColor="red"
+                this.style.backgroundRadius="50%"
+                flag=false
+            }else{
+                this.innerHTML.
+                flag=true;
+            }
+        }
+        // box.onclick=function(){
+        //  if(this.style.backgroundColor=="red"){
+        //     this.style.backgroundColor="yellow"
+        //      this.style.borderRadius=""
+
+        //  }else{
+        //      this.style.backgroundColor="red"
+        //      this.style.borderRadius="50%"
+        //  }
+        // }
+    </script>
+</body>
+</html>

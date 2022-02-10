@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO list 웹앱</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <style>
+        #app{width: 500px; margin: 0 auto; }
+        #inBox{ border: 2px solid #21B0F0; outline: none; width: 380px;
+                font-size: 20px; padding: 10px 15px; border-radius: 10px;}
+        .addBtn{padding: 10px 20px; font-size: 20px; border-radius: 10px;
+                background-color:#eee; color: blue; border: none; outline: none;}
+        .olist {padding: 0;}
+        .olist li {line-height: 2; font-size: 20px; color: #555;
+                border-bottom: 1px solid #ddd; list-style-position: inside;
+                line-height: 2; font-size: 20px; color: #555;}
+        .olist li button{margin: 5px 2px 0; padding: 5px 10px; border-radius: 5px; float: right;
+                        background-color: #21B0F0;; color: #fff; border: none; outline: none;}
+        .title{ text-align: center; color: #21B0F0;;}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 class="title">{{ title }}</h1>
+        <span>
+            <input type="text" :id="idName" v-model="todo"><!--inBox-->
+            <input type="submit" value="등록" :class="classBtn" @click="addTodo"> <!--addBtn-->
+        </span>
+            <ol class="olist">
+                <li v-for="(todo, idx) in todos">{{todo}}<button @click="delTodo" >X 삭제</button>
+            </li> <!--v-for="todo in todos-->
+            </ol>
+            <!--
+                1. UI 설계 과제 제출하기
+                2. UI 구현 웹사이트 제작하기
+                3. vue TODOlist 만들기
+            -->
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                title:"오늘의 할일 목록",
+                idName:"inBox",
+                classBtn:"addBtn",
+                classList:"olist",
+                todo:"",//인풋박스에 입력된 글을 가져오는 변수
+                todos:["UI 설계 과제 제출하기","UI 구현 웹사이트 제작하기","vue TODOlist 만들기"], // 등록한 글을 배열로 등록하는 변수
+                flag: false
+   
+            },
+            methods: {
+                addTodo: function (){
+                    if(this.todo !==""){ //인풋박스가 비어있지않으면 push 
+                    this.todos.push(this.todo); //배열명.push 입력할 데이터 console.log(this.todo)
+                    this.todo="" // 등록 후 빈문자열로 만들기
+                    
+                    }
+                },
+                delTodo(idx){
+                    console.log(idx); //클릭한 버튼의 인덱스 번호 출력하기
+                    this.todos.splice(idx, 1);//배열명.splice(인덱스번호, 자를갯수)
+                },
+            },
+
+        })
+    </script>
+</body>
+</html>

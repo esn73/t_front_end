@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품설명</title>
+    <style>
+        .imgbox{width: 400px; padding: 20px;
+                border: 2px solid #ccc;
+                margin-bottom: 20px;}
+        .imgbox img{width: 100%;}
+        #desc{width: 400px; padding: 20px; border: 2px solid #ccc;
+            margin-top: 20px; display: none;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="imgbox">
+            <img src="images/n1.jpg" alt="">
+        </div>
+        <button class="open" onclick="show()">상품설명보기</button>
+        <hr>
+        <div id="desc">
+            <h4>제품 상세 설명</h4><!--display: none;->block;-->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Similique sed deleniti provident sunt ipsum nulla aut iusto sint nam porro vitae dicta, 
+                reiciendis beatae voluptates rerum cum velit ad incidunt?  </p>
+                <button class="close" onclick="hide()">상세설명 닫기</button>
+          
+        </div>
+    </div>
+
+    <script>
+        var desc=document.getElementById("desc");
+        var open=document.getElementsByClassName("open"); //open[0]
+        var close=document.querySelector(".close"); //단수일때
+
+        // //2.
+        // open[0] .onclick=function(){
+            
+        //     desc.style.display="block";
+        //     open[0].style.display="none";
+        // }
+
+        // close.onclick =function(){
+        //     desc.style.display="none";
+        //     open[0].style.display="block";
+        // }
+
+        //3.element.addEventListener('이벤트 이름', 콜백함수); **가장 많이 사용
+        open[0].addEventListener('click', function(){
+            desc.style.display="block";
+            open[0].style.display="none";
+        });
+
+        close.addEventListener('click', function(){
+            desc.style.display="none";
+            open[0].style.display="block";
+        });
+
+    </script>
+</body>
+</html>

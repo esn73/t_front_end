@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>용돈 계산 프로그램 p.58</title>
+</head>
+<body>
+    <!-- 
+        기준 용돈은 10,000원
+        지출 내역 총합 - 교통비, 식비, 기타 총합
+        용돈>지출내역 총합
+     -->
+     <script>
+         const day=10000;
+         var pr1=6000; //식비 
+         var pr2=3000; //교통비
+         var pr3=2000; //기타
+         var total=pr1+pr2+pr3; //지출내역 총합
+
+         var result=day>total?
+         "용돈 관리를 잘했습니다." : (total-day)+"원 초과되었으니 용돈관리를 잘 못했습니다.";
+
+         document.write(result);
+
+
+
+         
+     </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열 리스트 출력</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        var fru=new Array("Apple", "Banana", "Orange", "kiwi");
+        // fru[0]="apple";
+        // fru[1]="bansns";
+        // console.log(fru); //['apple', 'banana', 'orange', 'kiwi']
+
+        var txt="";
+        // for(var i=0; i<fru.length; i++){
+        //     console.log(i);
+        //     txt +="<li>" + fru[i] + "</li>";
+        // }
+        fru.forEach(function(x,y,z){
+            console.log(x,y,z)
+            txt +="<li>" + (y+1) + "-" + x + "</li>";
+        });
+
+        document.write(txt);
+    </script>
+</body>
+</html>

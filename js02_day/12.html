@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3,5,15 배수인지 확인</title>
+</head>
+<body>
+    <script>
+        var num=prompt("숫자를 입력해주세요",30);
+
+        if(num%3==0&&num%15==0){//15배수확인
+            alert(num+"는 15배수입니다.");
+        }else if(num%5==0){//5배수확인
+            alert(num+"는 5의 배수입니다.");
+        }else if(num%3==0){//3배수확인
+            alert(num+"는3의배수입니다.");
+        }else{//위조건이 다 거짓일때 
+            alert(num+"는 3,5,15의 배수가 다 아닙니다.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>100cm단위를 1m단위로 환산하는 프로그램</title>
+</head>
+<body>
+    <h1 id="test"></h1>
+    <script>
+        let cm=prompt("cm단위를 입력하세요");
+        const div=100; //100cm단위를 1m단위
+        let m=cm/div;
+
+        document.getElementById("test") .innerHTML
+        // =cm+"m단위로 환산하면"+m+"m입니다.";
+        =`${cm}cm는 단위로 환산면${m}m 입니다.`;
+
+    </script>
+</body>
+</html>

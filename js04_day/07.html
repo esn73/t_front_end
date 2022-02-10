@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>변수->배열99p</title>
+</head>
+<body>
+    <script>
+        var list=new Array(); //배열선언
+        list[0]=30;
+        list[1]="따르릉";
+        list[2]=true;
+
+        console.log(list);
+
+        var list2=[30, "따르릉", true, 1, "test", 32, "all"]; //0~4 총 5개 출력
+
+        console.log(list2[2]);
+        console.log(list2.length);
+
+        // document.write(list2[0],"<br>");
+        // document.write(list2[1],"<br>");
+        // document.write(list2[2],"<br>");
+        // document.write(list2[3],"<br>");
+        // document.write(list2[4],"<br>");
+
+        for(var i=0; i<list2.length; i++){
+            document.write(list2[i],"<br>");
+        }
+
+        for(i in lsit2){
+            document.write(list2[i],"<br>");
+        }
+
+    </script>
+</body>
+</html>

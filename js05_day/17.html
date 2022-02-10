@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배경 칼라 배열 순서대로 출력</title>
+</head>
+<body>
+<body id="bgColor">
+    <button onclick="chColor()"> 배경 칼라 변경</button>
+    <script>
+   
+        var bgColor=["skyblue", "orange","deeppink","green"];
+        var i=0;                
+
+        function chColor(){
+     
+            if(i>bgColor.length-1){ 
+                i=0;} // 배열 길이 초과
+
+                document.getElementById("bgColor").style.backgroundColor
+                =bgColor[i];
+                i++; //0,1,2,3,4,   
+                 
+                console.log( i + "-" + bgColor[i]);
+        }
+
+
+        
+    </script>
+</body>
+
+</body>
+</html>

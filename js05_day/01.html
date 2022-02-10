@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열의 데이터 모드 합 구하기</title>
+</head>
+<body>
+    <script>
+        var num=[1,3,5,7,9]; //25
+        var sum=0;
+
+        // for(var i=0; i<num.length; i++){
+        //     // sum +=num[i];
+        //     document.write(sum+"+" +num[i]+"=" +(sum+=num[i]), "<br>");
+        // }
+        // for(i in num){
+        //     document.write(sum+"+" +num[i]+"=" +(sum+=num[i]), "<br>")
+        // }
+
+        // num.forEach(value, index, arry){}
+
+        num.forEach(test); //배열데이터에 각각 접근해서 실행
+        
+        function test(x, i, a){ //해당 함수가 실행할때 꼭 필요한 데이터를 끌어올때 
+     
+            console.log(sum, x, i, a); //x=valu i-index a-배열전체
+            sum+=x;
+        }
+        // Number("123") => 123
+        document.write(sum);
+     
+    </script>
+</body>
+</html>

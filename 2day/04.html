@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="서버주소" method="POST">
+        <label for="user_id">아이디</label>
+        <input type="text" id="user_id" name="id" placeholder="이름을 입력하세오"><br>
+        <label>비밀번호 <input type="text" id="pwd"></label>
+        <label><input type="radio" name="gender" value="1">여자</label>
+        <label><input type="radio" name="gender" value="m">남자</label>
+        <hr>
+        <label><input type="checkbox" cheched >독서</label>
+        <label><input type="checkbox">음악</label>
+        <label><input type="checkbox">영화</label>
+        <hr>
+            <select name="email" id="email">
+            <option value="">네이버</option>
+            <option value="">구글</option>
+            <option value="">다음</option>
+        </select>
+        <br>
+        <input type="number" min="1" max="5" value="5">
+        <input type="ranege" min="1" max="5" value="3">
+        <input type="color" value="#ff0000">
+
+        <h3>조회기간 설정</h3>
+        <input type="date" id="start">
+        <input type="date" id="end">
+        <hr>
+        <input type="time" value="09:00">
+        <br>
+        <label>50초남음</label>
+        <progress value="50" max="100"></progress>
+                <br>
+        <label>점유율 0.8</label>
+        <meter min="0" max="100" value="64"></meter>
+                <br>
+        <button type="submit">제출</button>
+        <button type="reset">취소</button>
+        <hr>
+    </form>
+    
+</body>
+</html>

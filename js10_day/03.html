@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bold{font-weight: bold; color: red;}
+    </style>
+</head>
+<body>
+    <script>
+        let pTag=document.createElement("p");
+        let textNode=document.createTextNode("주문이 완료 되었습니다.")
+
+        pTag.appendChild(textNode);
+
+        let attr=document.createAttribute("class");
+        attr.value="bold"
+        
+        pTag.setAttributeNode(attr);
+        document.body.appendChild(pTag);
+        //<p class="bold">주문이 완료되었습니다s</p>
+    </script>
+</body>
+</html>

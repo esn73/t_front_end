@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탭메뉴</title>
+    <style>
+        *{margin: 0; padding: 0;};
+        #wrap{width: 1000px; margin: 0 auto;}
+        .tab_con{padding: 50px; text-align: center; color: #fff;
+                display: none;}
+        #crimson{background-color: crimson;}
+        #deepSkyBlue{background-color: deepskyblue;}
+        #darkOliveGreen{background-color: darkolivegreen;}
+        #orange{background-color: orange;}
+
+        .tab_btn{background-color: #555; color: #fff; border: 0;
+                outline: 0; cursor: pointer; padding: 14px 20px;
+                float: left; width: 25%;  }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="crimson" class="tab_con">
+            <h1>Crimson</h1>
+            <p>My Color is Crimson</p>
+        </div>
+        <div id="deepSkyBlue" class="tab_con">
+            <h1>Deep Sky Blue</h1>
+            <p>My Color is DeepSkyBlue</p>
+        </div>
+        <div id="darkOliveGreen" class="tab_con">
+            <h1>Dark Olive Green</h1>
+            <p>My Color is Dark Olive Green</p>
+        </div>
+        <div id="orange" class="tab_con">
+            <h1>Orange</h1>
+            <p>My Color is Orange</p>
+        </div>
+    </div>
+   
+    <button class="tab_btn" onclick="openTab('crimson', this)">crimson</button>
+    <button class="tab_btn" onclick="openTab('deepSkyBlue', this)">deepSkyBlue</button>
+    <button class="tab_btn" onclick="openTab('darkOliveGreen', this)">darkOliveGreen</button>
+    <button class="tab_btn" onclick="openTab('orange', this)">orange</button>
+
+    <script>
+        let tab_con =document.querySelectorAll(".tab_con"); //탭 컨텐츠 박스 배열 4개
+        let tab_btn =document.querySelectorAll(".tab_btn") //탭메뉴 4개
+
+        function openTab(color, self){ //color='crimson'
+
+        //초기화
+        for(var i=0; i<tab_btn.length; i++){
+            tab_btn[i].style.backgroundColor="#555";
+            tab_con[i].style.display="none";
+        }
+            console.log(color);
+            
+            // tab_btn[i].style.backgroundColor=color;
+            // tab_box[i].style.display="block";
+
+            document.getElementById(color).style.display="block";
+            self.style.backgroundColor=color;
+        }
+
+        tab_btn[0].click(); //첫번재 메뉴에 클릭이벤트 붙여 놓기-초기값
+
+    </script>
+</body>
+</html>

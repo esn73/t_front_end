@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        .on{font-size: 32px; background-color: skyblue; border-bottom: 2px solid red;}
+    </style>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1> <!--배경:yellow-->
+    <ul>
+        <li>바나나</li> <!--배경 : red / color #fff-->
+        <li>체리</li> <!--테두리 : blue / -->
+        <li>딸기</li> <!--32px-->
+    </ul>
+    <dl>
+        <dt>리스트 제목</dt> <!--클릭하면 : 목록태그 + .on-->
+        <dd>1-1</dd>    <!--클릭하면: dd: yellow / red-->
+        <dd>1-2</dd>
+        <dd>1-3</dd>
+        <dd>1-4</dd>
+        <dd>1-5</dd>
+    </dl>
+    <script>
+        $("h1").css("background-color","yellow");
+        $("ul li:first").css({ //ul li:nth-child(1)"
+            backgroundColor: "red",
+            color: "#fff"
+        });
+        $("ul li").eq(1).css("border","2px solid blue") //.eq인덱스번호
+        // $("ul li:nth-child(2)").css("border","2px solid blue");
+        $("ul li").eq(2).css("font-size" , "32px");
+        $("ul li").css("font-weight","bold");
+
+        $("dl dt").click(function(){ //클릭하면 : "목록태그" + .on
+            $(this).html("목록태그");
+            $(this).toggleClass("on"); //      $(this).addClass("on")+remove 같이 됌;
+
+        });
+
+        //dd color: red  // dd클릭하면 yellow 
+        $("dl dd").css("color", "red");
+        $("dl dd").click(function(){
+            // $(this).css("color","yellow").siblings("dd").css("color","red");
+
+        });
+
+    </script>
+</body>
+</html>

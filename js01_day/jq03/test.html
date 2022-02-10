@@ -1,0 +1,52 @@
+$(function(){
+    let totalNum = $(".imgbox img").length;  // 5
+    let imgWidth = $(".slider li").width();  // 200px
+    let imgTotalWidth = imgWidth * totalNum;
+
+     // 초기세팅
+     init(); 
+
+     // 자동 넘어가는 슬라이더
+     let roll = setInterval(next, 2000);
+
+     $(".nextBtn").click(function(){
+         clearInterval(roll);
+         next();
+     });
+
+     $(".prevBtn").click(function(){
+         clearInterval(roll);
+         prev();
+     });
+
+     $(".imgbox>button").mouseleave(function(){
+        let roll = setInterval(next, 2000);
+     });
+
+     // 능력단위 함수들 정리
+     function init() {
+        $(".page span:first").text(1);
+        $(".page span:last").text(totalNum); 
+        $(".slider").width( imgTotalWidth );
+     }
+
+     function next() {
+        $(".slider").stop().animate({marginLeft: -imgWidth}, 500, "swing", function(){
+               $(".slider>li:first").appendTo(".slider");
+               $(".slider").css({marginLeft: 0});
+               let num = $(".slider>li:first").children("img").attr("alt");
+               $(".page span:first").text(num);
+               $(".dot li").eq(num-1).addClass("on").siblings("li").removeClass("on");
+         });
+     }
+     function prev() {
+         $(".slider").css({marginLeft: -imgWidth}); 
+         $(".slider>li:last").prependTo(".slider");
+
+         $(".slider").animate({marginLeft: 0}, 500, "swing", function(){
+            let num = $(".slider>li:first").children("img").attr("alt");
+            $(".page span:first").text(num);
+            $(".dot li").eq(num-1).addClass("on").siblings("li").removeClass("on");
+         });
+     }
+ });

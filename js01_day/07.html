@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 동적 데이터 타입-형변환</title>
+</head>
+<body>
+    <script>
+        var x = 5;
+        var y = null;
+        var z = x + y; // 5+0=5 
+        console.log(z);
+
+        var x1="5";
+        var y1=null;
+        var z1=x1+y1; //문자 5 + null = 5null ->null도 문자로 출력
+        console.log(z1)
+
+        var x2="5";
+        var y2=2;
+        var z2=x2+y2; //"5"+"2"=52 
+        console.log("z2: " + z2);
+
+        var x3="5";
+        var y3=2;
+        var z3=x3-y3; // 숫자 5-2=3 마이너스(-)연산은 문자>숫자 데이터타입으로 변경
+        console.log("z3:"+z3);
+
+        var x4="5";
+        var y4=2;
+        var z4=x4*y4; // 숫자 5*2=10 *곱하기 연산은 문자>숫자 데이터타입으로 변경
+        console.log("z4:"+z4);
+        console.log(x4, typeof x4);
+
+        var x5=Number(x4); //Number->문자>숫자로 숫자 5
+        console.log(x5, typeof x5);
+        var z5=x5+y4;
+        console.log(z5, typeof z5); // 7
+
+
+</script>
+</body>
+</html>

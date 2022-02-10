@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch case by case</title>
+</head>
+<body>
+    <script>
+        var food=prompt("구매하실 과일을 입력해주세요.","banana");
+
+        switch(food){
+            case'orange':console.log("오렌지는 2000원입니다.");
+            break;
+            case 'mango':
+            case 'banana':console.log("망고와 바나나는 3000원입니다.");
+            break;
+            default:console.log(`우리가게에서는 ${food}는 판매하지 않는 상품입니다`);
+        }
+    </script>
+</body>
+</html>

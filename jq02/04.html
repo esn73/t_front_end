@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        #box {width: 100px; height: 100px; 
+             background-color: crimson;
+             position: absolute;}
+    </style>
+    <script>
+        $(function(){
+            $("#box").animate({left:500},1000).animate({top:500},1000)
+                     .animate({left:0},1000).animate({top:0},1000)
+
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

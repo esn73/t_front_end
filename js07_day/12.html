@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num=[1,3,5,7,9];
+        var sum=0;
+
+        //배열의 등록된 데이터 다 더하기 연산해서 총합 sum
+
+        // for(i=0; i<num.length; i++){
+        //     sum +=num[i]
+        // }
+        // for(i in num){
+        //     sum +=num[i]
+        // }
+
+        num.forEach(function(value){ //a,b,c
+            sum +=value
+        });
+        document.write(sum);
+    </script>
+</body>
+</html>

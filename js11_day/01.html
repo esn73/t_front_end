@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객제 생성자 함수 149~153p</title>
+</head>
+<body>
+    <script>
+        CheckWeight("아무개", 175, 70);
+        CheckWeight("아무개", 150,55);
+        function CheckWeight(name,height,weight){
+            let height=170;
+            let weight=65;
+            let name="홍길동";
+
+            let minWeight=(height-100)*0.9-5;
+            let maxWeight=(height-100)*0.9-5;
+
+            if(weight>=minWeight&&weight<=maxWeight){
+                document.write(name+"씨는 정상입니다.","<br>");
+            }else{
+                document.write(name+"씨는 평균이 아닙니다.","<br>");
+            }
+        }
+    </script>
+</body>
+</html>

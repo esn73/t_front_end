@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 속성 연습</title>
+    <style>
+
+     div{ border: 2px solid black; width: 500px; height: 300px;
+        background-image: url(bg2.jpg); background-size: 100px;
+        padding: 20px 40px; background-color: #FFF;
+     margin: 20px auto; 
+        box-shadow: 5px 5px 10px red;
+    }
+     h2{text-align: center; color: chocolate;
+        text-decoration: underline;
+        text-shadow: -5px 5px 5px red;
+    }
+    p{line-height: 2; font-size: 12px; color: #333; }
+    .box1{background-repeat: repeat-x; letter-spacing: 2px; /*direction: rtl;*/}
+    .box2{background-repeat: no-repeat; word-spacing: 10px;
+        background-position: center;
+        text-align: justify; /* 문단의 양끝단을 정렬함*/
+    }
+    .box3{background-repeat: repeat-y; text-indent: 50px;
+        background-position: right top;
+    }
+    body{background-image: url(bg5.png;),linear-gradient(45deg, blue, skyblue);
+        background-repeat: no-repeat, no-repeat;
+        background-position: right center, left top;
+        background-attachment:fixed, scroll;
+        background-size: 50px, 100%;
+    }
+    .box4{background-image: none;}
+    .box4 p{white-space: nowrap; /* 박스크기 무시한채 한줄처리*/
+        overflow: hidden; text-overflow: ellipsis; /* 말줄임표 */}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="box1">
+    <h2>초콜릿01</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+    </div>
+    <div class="box2">
+    <h2>초콜릿02</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+    </div>
+    <div class="box3">
+    <h2>초콜릿03</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+    </div>
+    <div class="box4">
+        <h2>초콜릿04</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ipsum dolores! Enim architecto veritatis necessitatibus mollitia quibusdam aspernatur. Eos vitae, hic vero repudiandae accusamus doloremque eligendi. Obcaecati neque sit fuga.</p>
+        </div>
+    
+</body>
+</html>

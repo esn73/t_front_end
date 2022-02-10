@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0927</title>
+
+</head>
+<body>
+    <input type="text" id="num1" size="1" value="" >
+    <input type="text" id="num2" size="1" value="" >
+    
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+
+    <input type="text" id="result" size="1">
+
+
+    <script>
+
+    function add(){
+        var num1=document.getElementById("num1").value;
+        var num2=document.getElementById("num2").value;
+
+        var total=Number(num1)+Number(num2);//** 텍스트로 인식돼서 숫자로 변환 선언할것!
+        console.log(typeof Number(num1), typeof Number(num2));
+        total=num1+num2;
+        document.getElementById("result").value=total;
+        
+    }
+
+        function sub(){
+            var num1=document.getElementById("num1").value;
+            var num2=document.getElementById("num2").value;
+
+            var total=num1-num2;
+            document.getElementById("result").value=total;
+
+        }
+
+
+
+
+        
+
+
+
+
+
+    </script>
+
+    
+
+    
+</body>
+</html>

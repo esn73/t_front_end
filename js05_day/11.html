@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function day(a,b,c){
+            return`오늘은 ${a}월 ${b}일 ${c}요일 입니다.`;
+            // console.log(`오늘은 ${a}월 ${b}일 ${c}요일 입니다.`);
+
+        }
+
+       console.log(day(10,1,"금")); //오늘은 10월 1일 금요일 입니다.
+
+       //사각형의 너비 구하는 함수 가로x세로=>사각형의 넓이 출력
+
+       function test(x,y){
+        document.write("사각형의 넓이는 : " + x * y, "<br>");
+       }
+      
+       test(5, 10);
+       test(220, 320);
+
+       //리턴식이 있는 함수는 함수를 호출한 위치에 계산된 값을 반환한다.
+       var result = test2(30,30);
+
+       var result = function(x,y){
+           return "사각형의 넓이는 : " + (x * y);
+        }       
+
+       document.write(result);
+    </script>
+</body>
+</html>

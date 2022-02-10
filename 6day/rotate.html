@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rotate:회전</title>
+    <style>
+        #origin{border: 1px solid #555; float: left;
+                margin: 30px;}
+        #origin>div{width: 350px; height: 200px; overflow: hidden;
+                    transition-property: transform; /* css 속성이람 */
+                    transition-duration: .5s; /* 중간단계 랜더링 시간 */
+                    transition-timing-function: ease; /* 가속도 */
+                    transition-delay: 0s; /* 애니메이션 지연시간*/    }
+        #origin>div>img{width: 100%;}
+
+        .rotate1:hover{transform: rotate(45deg);}
+        .rotate2:hover{transform: rotate(-45deg);} /*반시계방향*/
+        .rotate3:hover{transform: rotate(180deg);}
+    </style>
+</head>
+<body>
+    <div id="origin">
+        <div class="rotate1">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotate2">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotate3">
+            <img src="images/test.jpg" alt="배너">
+        </div>
+    </div>
+</body>
+</html>

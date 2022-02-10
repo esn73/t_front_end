@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>모바일 메뉴</title>
+    <style>
+        .toggle {display: inline-block; cursor: pointer; margin: 50px 0 0 500px;}
+        .toggle span{width: 35px; height: 2px; background-color: #333; display: block;} /*span 인라인이라 블록처리해야함*/
+        .toggle span:nth-child(2){ margin:7px 0}
+
+        /**/
+
+        .sidnav{height: 100%; position: fixed; z-index: 10; top: 0;
+                left: -400px; padding: 100px 150px 0 50px; background-color: rgba(0, 0, 0, 0.7); overflow-x: hidden;
+                transition: 1s;}
+        .sidnav .close{color: #fff; text-decoration: none; padding: 10px; font-size: 32px; display: block;}
+        .menu{margin-top: 50px;}
+        .menu li{font-size: 32px; line-height: 2; color: #ddd;}
+
+        .sidnav.on{left: 0;}
+    </style>
+</head>
+<body>
+    <div class="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div class="sidnav">
+        <a href="#" class="close">닫기 x</a>
+        <ul class="menu">
+            <li>menu01</li>
+            <li>menu02</li>
+            <li>menu03</li>
+        </ul>
+    </div>
+    <script>
+        var toggle=document.querySelector(".toggle") ;
+        var sidnav=document.querySelector(".sidnav") ;
+        var clear=document.querySelector(".close") ;
+
+        toggle.onclick=function(){
+            // sidnav.style.left="0"
+            // sidnav.classList.add("on")
+            sidnav.classList.toggle("on")
+        }
+
+        close.onclick=function(e){ //태그 기본 이벤트 막기
+            e.prventDefault();
+            // sidnav.style.left="-400px"
+            // sidnav.classList.remove("on")
+            sidnav.classList.remove("on")
+        }
+    </script>
+</body>
+</html>

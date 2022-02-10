@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3항연상 퉆표권 확인 56~5</title>
+</head>
+<body>
+    <input type="text" id="age" placeholder="나이를 입력해주세요">
+    <button onclick="vote()">투표권 확인</button>
+    <hr>
+    <p id="result"></p>
+    <script>
+        function vote(){
+            // alert("버튼클릭!!");
+            var age=document.getElementById("age").value;
+            console.log(age);
+
+            const basic=18;
+            var result=age>=basic?"당신은 투표가 가능합니다":"투표가 불가능합니다."
+            // document.write("당신은 나이가 " + age + "세 이므로 " + result);
+            document.getElementById("result").innerHTML
+            =`당신은 나이가 ${age}살 이므로 ${result};` //$변수명**위에
+        }
+    </script>
+</body>
+</html>

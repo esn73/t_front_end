@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>740 93</title>
+    <style>
+        #wrap{width: 200px; height: 200px; margin: 100px auto; position: relative;}
+        .sticker{width: 100%; height: 100%; position: absolute; left: 0; top: 0;
+                background: url(../images/sticker.png) no-repeat center/cover; transition: 1s;
+                animation: rotate 10s infinite linear
+        }
+        .new{text-transform: uppercase; font-size: 42px; color: #fff; position: absolute; left:50%; top: 50%; transform: translate(-50%, -50%); z-index: 10;
+            text-shadow: 2px 3px 10px #333;
+        }
+        #wrap:hover .sticker{animation-play-state:paused ;} /*멈춤*/
+
+        @keyframes rotate{
+            from{transform: rotate(0);}
+            to{transform: rotate(1turn);}
+        }
+
+
+        .monster{width: 74px; height: 93px; overflow: hidden; margin: 0 auto;
+                background: url(../images/monster.png) no-repeat left center;
+                animation: play 0.8s steps(10) infinite; /*steps(10) gif 애니메이션 옵션*/
+        }
+
+        @keyframes play{
+            0%{background-position:0 center;}
+            100%{background-position: -740px center;}
+        }
+
+        .box{width: 384px; display: block; margin: 50px auto; 
+            animation: move 1s alternate infinite; transform-origin: center 10px /*기준점 변경*/;
+        }
+
+        @keyframes move{
+            0%{transform: rotate(-45deg);}
+            100%{transform: rotate(45deg);}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="sticker"></div>
+        <div class="new">new</div>
+    </div>
+    <div class="monster"></div>
+    <img src="../images/testbox.png" alt="액자" class="box">
+
+</body>
+</html>

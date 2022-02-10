@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 바인딩</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #ten {color: blue; font-size: 32px;}
+        .text {color:red; letter-spacing: 20px; text-decoration: underline;}
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+    <a v-if="flag">A 태그 VUE</a>
+    <ul>
+        <li v-for="item in type">{{item}}</li>
+    </ul>
+        <p v-show="flag">뷰 바인딩 문법</p>
+        <h2 v-bind:id="uid">뷰 속성 바인딩</h2>
+        <button v-bind:class="uclass">경고창 출력</button>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app" ,
+            data: {
+                // text:"list", //거짓, 참
+                flag: true,
+                type:["a","b","c","d"],
+                uid: "ten",
+                uclass:"text"
+            },
+            methods:{
+                popAlert: function(){
+                    alert("경고창 열기!")
+                }
+            },
+        });
+    </script>
+    
+</body>
+</html>
